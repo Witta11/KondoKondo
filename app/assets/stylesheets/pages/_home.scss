@@ -1,8 +1,18 @@
 // Specific CSS for your home-page
+.container {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .search-bar {
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+.info-blocks {
+  justify-content: space-around;
 }

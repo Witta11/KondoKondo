@@ -4,8 +4,9 @@ class KondoPolicy < ApplicationPolicy
       scope.all
     end
 
+end
     def create?
-      return true
+      true
     end
 
     def update?
@@ -16,5 +17,4 @@ class KondoPolicy < ApplicationPolicy
       record.user == user
     end
 
-  end
 end

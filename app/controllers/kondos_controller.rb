@@ -10,6 +10,23 @@ class KondosController < ApplicationController
   #   end
   end
 
+  def new
+    @kondo = Kondo.new
+    authorize @kondo
+  end
+
+  def create
+    @kondo = Kondo.new(set_params)
+    @kondo.user = current_user
+    @kondo.save
+    if @kondo.save
+      redirect_to kondos_path(@kondo)
+    else
+      render :new
+    end
+    authorize @kondo
+  end
+
   def destroy
     @kondo = Kondo.find(params[:id])
     @kondo.user = current_user
@@ -18,4 +35,9 @@ class KondosController < ApplicationController
     redirect_to kondos_path # redirect has to change to dashboard_path in upcoming version
   end
 
+private
+
+  def set_params
+    params.require(:kondo).permit(:title, :description, :location, :picture)
+  end
 end
