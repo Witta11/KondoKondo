@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
+# require 'faker'
 # require 'csv'
 
 puts "Start seeding Users..."
@@ -53,7 +53,7 @@ puts "Start seeding Kondos..."
 
   Kondo.create!(
     title: "My first Demo tape from 1995",
-    description: "I originally recorded it when I was still a teenager and made it a Kondo so that another person can have maximum joy of Rap vibes from the past!",
+    description: "I originally recorded it when I was still a teenager and made it a Kondo so that you can have maximum joy of Rap vibes from the past!",
     picture:"https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8dmludGFnZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=600&q=60",
     location: "Hagelberger Str. 10-15 10965 Berlin",
     user: Friddi,
@@ -63,7 +63,7 @@ puts "Start seeding Kondos..."
 
   Kondo.create!(
     title: "My deceised Grandma's Grammophone",
-    description: "Although very good in shape, I am emotionally not capable of having it around me anymore, taking money for it feels wrong, so please come by and fetch it ",
+    description: "Although very good in shape, I am emotionally not capable of having it around me anymore, so please come by and fetch it ",
     picture:"https://images.unsplash.com/photo-1518893883800-45cd0954574b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=674&q=80",
     location: "Kreuzbergstraße 17a, 10965 Berlin",
     user: Fritzi,
