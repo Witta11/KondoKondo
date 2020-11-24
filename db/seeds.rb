@@ -62,7 +62,7 @@ puts "Start seeding Kondos..."
     )
 
   Kondo.create!(
-    title: "My deceised Grandma's Grammophone",
+    title: "My Grandma's Grammophone",
     description: "Although very good in shape, I am emotionally not capable of having it around me anymore, so please come by and fetch it ",
     picture:"https://images.unsplash.com/photo-1518893883800-45cd0954574b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=674&q=80",
     location: "Kreuzbergstraße 17a, 10965 Berlin",
@@ -72,7 +72,7 @@ puts "Start seeding Kondos..."
     )
 
   Kondo.create!(
-    title: "Vintage Pocket Watch - unfunctional",
+    title: "Vintage Pocket Watch",
     description: "Just found this very old and sadly not functional watch when tidying my stuff during lock-down, for s.o. to repair maybe? ",
     picture:"https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTR8fHZpbnRhZ2V8ZW58MHx8MHw%3D&auto=format&fit=crop&w=600&q=60",
     location: "Nostitzstraße 15, 10961 Berlin",
@@ -82,7 +82,7 @@ puts "Start seeding Kondos..."
     )
 
   Kondo.create!(
-    title: "Some old maps - posters for you?",
+    title: "Some old maps-posters for you?",
     description: "Hidden in an old box I found these old maps of Berlin, I kept some for myself, feel free to stop by and get one!",
     picture:"https://images.unsplash.com/photo-1473163928189-364b2c4e1135?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDJ8fHZpbnRhZ2UlMjBib29rc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=600&q=60",
     location: "141, Bergmannstraße, 10961 Berlin",
