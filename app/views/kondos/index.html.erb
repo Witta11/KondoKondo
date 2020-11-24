@@ -4,11 +4,14 @@
 <div class="container mt-5">
 
   <% @kondos.each do |kondo| %>
-    <%= kondo.title %>
-    <%= kondo.description %>
-    <%= kondo.location %>
-    <%= kondo.picture %>
-    <%= kondo.reserved %>
-    <%= kondo.active %>
+    <p><%= kondo.title %></p>
+    <p><%= kondo.description %></p>
+    <p><%= kondo.location %></p>
+    <p><%= kondo.picture %></p>
+    <p><%= kondo.reserved %></p>
+    <p><%= kondo.active %></p>
+    <p><% if policy(kondo).destroy? %>
+      <%= link_to "delete kondo", kondo_path(kondo), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %></p>
+    <% end %>
   <% end %>
 </div>
