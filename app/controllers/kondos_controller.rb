@@ -3,15 +3,15 @@ class KondosController < ApplicationController
 
   def index
     if params[:query].present?
-      @kondos = Kondo.__elasticsearch__.search(
-        query: {
-          multi_match: {
-            query: params[:query],
-            fields: ['location']
-          }
-        }
-      ).results
-      # @kondos = policy_scope(Kondo).where(location: params[:query]).order(created_at: :desc)
+      # @kondos = Kondo.__elasticsearch__.search(
+      #   query: {
+      #     multi_match: {
+      #       query: params[:query],
+      #       fields: ['location']
+      #     }
+      #   }
+      # ).results
+      @kondos = policy_scope(Kondo).where(location: params[:query]).order(created_at: :desc)
     else
       @kondos = policy_scope(Kondo).order(created_at: :desc)
     end

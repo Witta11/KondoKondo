@@ -5,10 +5,10 @@
       <%= form_tag kondos_path, class: "search-container", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          placeholder: "Search location..."
+          placeholder: "Search location...", class: "search"
         %>
         <%= button_tag do %>
-        <i class="fas fa-search"></i>
+        <i class="fas fa-search search"></i>
         <% end %>
       <% end %>
     </div>

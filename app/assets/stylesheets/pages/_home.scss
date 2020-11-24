@@ -16,3 +16,20 @@
 .info-blocks {
   justify-content: space-around;
 }
+
+.search-container {
+  position: relative;
+}
+
+.search {
+  border-radius: 8px;
+  position: absolute;
+  display: inline-block;
+  padding: 8px;
+  width: 460px;
+}
+
+.fas.fa-search.search {
+  left: 13em;
+  bottom: -1em;
+}
