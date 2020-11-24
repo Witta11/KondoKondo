@@ -1,12 +1,20 @@
-.navbar-lewagon {
+.kondo-nav {
   justify-content: space-between;
-  background: white;
+  background: transparent;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.kondo-link {
+  font-size: 32px;
+  color: white;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.kondo-link:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: grey;
 }
+
+.dropdown-menu {
+  border-radius: 8px;
+}
+

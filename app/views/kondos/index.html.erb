@@ -3,6 +3,7 @@
 
 <div class="container mt-5">
 
+
   <% @kondo.each do |kondo| %>
     <div class="card-product">
       <% if kondo.picture.attached? %>
@@ -30,4 +31,15 @@
       </div>
     </div>
   <% end %>
-</div>
+<%# </div> %>
+
+  <%# @kondos.each do |kondo| %>
+    <%#= kondo.title %>
+    <%#= kondo.description %>
+    <%#= kondo.location %>
+    <%#= kondo.picture %>
+    <%#= kondo.reserved %>
+    <%#= kondo.active %>
+  <%# end %>
+<%# </div> %>
+
