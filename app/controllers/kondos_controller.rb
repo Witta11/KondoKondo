@@ -23,4 +23,8 @@ class KondosController < ApplicationController
     # ]
   end
 
+  def kondo_params
+    params.require(:kondo).permit(:title, :description, :location, :picture)
+  end
+
 end
