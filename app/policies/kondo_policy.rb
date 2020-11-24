@@ -4,9 +4,9 @@ class KondoPolicy < ApplicationPolicy
       scope.all
     end
 
-    def index
-      return true
-    end
+    # def index
+    #   return true
+    # end
 
     def create?
       return true

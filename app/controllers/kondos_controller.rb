@@ -8,7 +8,19 @@ class KondosController < ApplicationController
   #   else
   #     @movies = Movie.all
   #   end
-  authorize @kondos
+    # authorize @kondos
+  end
+
+  def show
+    @kondo = Kondo.find(params[:id])
+    authorize @kondo
+
+    # @markers = [
+    #   {
+    #     lat: @kondo.latitude,
+    #     lng: @kondo.longitude
+    #   }
+    # ]
   end
 
 end

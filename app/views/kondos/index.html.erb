@@ -4,12 +4,12 @@
 <div class="container mt-5">
 
 
-  <% @kondo.each do |kondo| %>
+  <% @kondos.each do |kondo| %>
     <div class="card-product">
-      <% if kondo.picture.attached? %>
-      <%= cl_image_tag kondo.picture.key, crop: :fill %>
-      <% else %>
-      <img src="<%= kondo.picture_url %>" alt="">
+      <% if kondo.picture.nil? %>
+      <%#= cl_image_tag kondo.picture.key, crop: :fill %>
+      <%# else %>
+      <img src="<%= kondo.picture %>" alt="">
       <% end %>
       <div class="container-card">
         <div class="card-product-infos">
@@ -26,7 +26,7 @@
             <p><%= kondo.location %></p>
           </div>
           <div class="row">
-            <p><%= kondo.username %> offered by </p>
+            <p><%= kondo.user.username %> offered by </p>
           </div>
       </div>
     </div>
