@@ -1,10 +1,31 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= form_tag kondos_path, class: "search-container", method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control search-home inline-form",
-    placeholder: "Search location..."
-  %>
-  <%= submit_tag "Search", class: "btn btn-orange" %>
-<% end %>
+<div class="container mt-5">
+  <div class="search-bar">
+    <div>
+      <h3>Type in your location</h3>
+      <%= form_tag kondos_path, class: "search-container", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          placeholder: "Search location..."
+        %>
+        <%= button_tag do %>
+        <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="info-blocks row align-self-end">
+    <div class="block-one">
+      <h2>Find Treasures</h2>
+      <p></p>
+    </div>
+    <div class="block-two">
+      <h2>Reuse Locally</h2>
+      <p></p>
+    </div>
+    <div class="block-three">
+      <h2>Create a Community</h2>
+      <p></p>
+    </div>
+  </div>
+</div>
+
