@@ -11,7 +11,7 @@ class KondosController < ApplicationController
   end
 
   def new
-    @kondos = Kondo.new
+    @kondo = Kondo.new
     authorize @kondo
   end
 
@@ -32,3 +32,4 @@ private
   def set_params
     params.require(:kondo).permit(:title, :description, :location, :picture)
   end
+end
