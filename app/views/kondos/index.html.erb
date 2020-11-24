@@ -1,3 +1,33 @@
-<h1>Kondos#index</h1>
-<p>Find me in app/views/kondos/index.html.erb</p>
+<%= render 'shared/navbar' %>
+<br><br>
 
+<div class="container mt-5">
+
+  <% @kondo.each do |kondo| %>
+    <div class="card-product">
+      <% if kondo.picture.attached? %>
+      <%= cl_image_tag kondo.picture.key, crop: :fill %>
+      <% else %>
+      <img src="<%= kondo.picture_url %>" alt="">
+      <% end %>
+      <div class="container-card">
+        <div class="card-product-infos">
+          <div class="row">
+            <h1><%= kondo.title %></h1>
+          </div>
+          <div class="row">
+            <h2><%= kondo.reserved %> - <%= kondo.active %></h2>
+          </div>
+          <div class="row">
+            <p><%= kondo.description %></p>
+          </div>
+          <div class="row loc">
+            <p><%= kondo.location %></p>
+          </div>
+          <div class="row">
+            <p><%= kondo.username %> offered by </p>
+          </div>
+      </div>
+    </div>
+  <% end %>
+</div>

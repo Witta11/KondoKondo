@@ -8,6 +8,7 @@ class KondosController < ApplicationController
   #   else
   #     @movies = Movie.all
   #   end
+  authorize @kondos
   end
 
 end
