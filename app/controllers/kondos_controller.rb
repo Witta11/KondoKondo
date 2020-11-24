@@ -10,4 +10,25 @@ class KondosController < ApplicationController
   #   end
   end
 
-end
+  def new
+    @kondos = Kondo.new
+    authorize @kondo
+  end
+
+  def create
+    @kondo = Kondo.new(set_params)
+    @kondo.user = current_user
+    @kondo.save
+    if @kondo.save
+      redirect_to kondo_path(@kondo)
+    else
+      render :new
+    end
+    authorize @kondo
+  end
+
+private
+
+  def set_params
+    params.require(:kondo).permit(:title, :description, :location, :picture)
+  end
