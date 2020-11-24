@@ -1,7 +1,7 @@
 <%= simple_form_for(kondo) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :location %>
+  <%= f.input :title, placeholder: 'short description of kondo' %>
+  <%= f.input :description, placeholder: 'describe details of kondo' %>
+  <%= f.input :location, placeholder: 'enter street address where kondo needs to be picked up ' %>
   <%= f.input :photo, as: :file %>
   <br>
   <%= f.submit %>

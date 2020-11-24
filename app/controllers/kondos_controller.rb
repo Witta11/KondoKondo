@@ -20,7 +20,7 @@ class KondosController < ApplicationController
     @kondo.user = current_user
     @kondo.save
     if @kondo.save
-      redirect_to kondo_path(@kondo)
+      redirect_to kondos_path(@kondo)
     else
       render :new
     end
