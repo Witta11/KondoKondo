@@ -16,35 +16,35 @@ Friddi = User.create!(
     username: "Friddi",
     first_name: "Friedrich",
     last_name: "Hegel",
-    email: "#{first_name}.#{last_name}@gmail.com";
-    encrypted_password: "123456"
+    email: "Friedrich.Hegel@gmail.com",
+    password: "123456"
 )
 
 Kalle = User.create!(
     username: "Kalle",
     first_name: "Karl",
     last_name: "Marx",
-    email: "#{first_name}.#{last_name}@gmail.com";
-    encrypted_password: "123456"
+    email: "Karl.Marx@gmail.com",
+    password: "123456"
 )
 
 Teddy = User.create!(
     username: "Teddy",
     first_name: "Theodor",
     last_name: "Adorno",
-    email: "#{first_name}.#{last_name}@gmail.com";
-    encrypted_password: "123456"
+    email: "Theodor.Adorno@gmail.com",
+    password: "123456"
 )
 
 Fritzi = User.create!(
     username: "Fritzi",
     first_name: "Friedrich",
     last_name: "Nietzsche",
-    email: "#{first_name}.#{last_name}@gmail.com";
-    encrypted_password: "123456"
+    email: "Friedrich.Nietzsche@gmail.com",
+    password: "123456"
 )
 
-puts "End seeding Userrs, #{User.count} created ..."
+puts "End seeding Users, #{User.count} created ..."
 
 
 
