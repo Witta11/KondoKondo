@@ -1,17 +1,19 @@
-<h1>Kondos#index</h1>
-<p>Find me in app/views/kondos/index.html.erb</p>
-
 <div class="container mt-5">
 
+
   <% @kondos.each do |kondo| %>
-    <p><%= kondo.title %></p>
-    <p><%= kondo.description %></p>
-    <p><%= kondo.location %></p>
-    <p><%= kondo.picture %></p>
-    <p><%= kondo.reserved %></p>
-    <p><%= kondo.active %></p>
-    <p><% if policy(kondo).destroy? %>
-      <%= link_to "delete kondo", kondo_path(kondo), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %></p>
-    <% end %>
-  <% end %>
-</div>
+
+    <div class="card-product">
+      <%= cl_image_tag kondo.image.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-product-infos">
+            <h1><%= kondo.title %></h1>
+            <p><%= kondo.description %></p>
+            <p><%= kondo.location %></p>
+            <h2><%= kondo.reserved %> - <%= kondo.active %></h2>
+            <p><%= kondo.active %></p>
+            <p><% if policy(kondo).destroy? %>
+              <%= link_to "delete kondo", kondo_path(kondo), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %></p>
+            <% end %>
+            <p>Fetch it at <%= kondo.user.username %>'s place </p>
+      </div>
+    </div>

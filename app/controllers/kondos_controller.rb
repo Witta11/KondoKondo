@@ -34,9 +34,9 @@ class KondosController < ApplicationController
     redirect_to kondos_path # redirect has to change to dashboard_path in upcoming version
   end
 
-private
+  private
 
   def set_params
-    params.require(:kondo).permit(:title, :description, :location, :picture)
+    params.require(:kondo).permit(:title, :description, :location, :image)
   end
 end
