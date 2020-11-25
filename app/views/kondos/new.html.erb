@@ -2,5 +2,8 @@
   <%= link_to "New Kondo", new_kondo_path %>
 <% end %>
 
-
-<%= render "form", kondo: @kondo %>
+<div class="container">
+  <div class="row">
+    <%= render "form", kondo: @kondo %>
+  </div>
+</div>
