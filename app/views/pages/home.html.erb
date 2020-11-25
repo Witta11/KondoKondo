@@ -2,18 +2,30 @@
   <div class="search-bar">
     <div>
       <h3>Scroll through your Hood</h3>
-      <%= form_tag kondos_path, class: "search-container", method: :get do %>
+
+      <%= form_tag split_path, class: "search-container", method: :get do %>
          <%= text_field_tag :location,
              params[:location],
              placeholder: "Search location...", class: "form-control search"
           %>
-<!--           <%= link_to kondos_path do %>
+          <%= link_to split_path do %>
           <p><i class="fas fa-search search"></i></p>
-          <% end %> -->
-        <div class="input-group-append">
-          <a href="/kondos"><button class="btn" type="button"><i class="fas fa-search search"></i></button></a>
+          <% end %>
+        <!-- <div class="input-group-append">
+          <a href="/split_path"><button class="btn" type="button"><i class="fas fa-search search"></i></button></a>
         </div>
-       <% end %>
+       <% end %> -->
+<!-- =======
+      <%= form_tag split_path, class: "search-container", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          placeholder: "Search location...", class: "search"
+        %>
+        <%= button_tag do %>
+        <i class="fas fa-search search"></i>
+        <% end %>
+      <% end %>
+>>>>>>> master -->
     </div>
   </div>
   <div class="info-blocks row">
@@ -31,4 +43,3 @@
     </div>
   </div>
 </div>
-
