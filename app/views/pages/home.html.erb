@@ -7,8 +7,11 @@
              params[:location],
              placeholder: "Search location...", class: "form-control search"
           %>
+<!--           <%= link_to kondos_path do %>
+          <p><i class="fas fa-search search"></i></p>
+          <% end %> -->
         <div class="input-group-append">
-          <a href=""><button class="btn" type="button"><i class="fas fa-search search"></i></button></a>
+          <a href="/kondos"><button class="btn" type="button"><i class="fas fa-search search"></i></button></a>
         </div>
        <% end %>
     </div>
