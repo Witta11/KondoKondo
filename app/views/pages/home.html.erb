@@ -2,7 +2,7 @@
   <div class="search-bar">
     <div>
       <h3>Scroll through your Hood</h3>
-      <%= form_tag kondos_path, class: "search-container", method: :get do %>
+      <%= form_tag split_path, class: "search-container", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           placeholder: "Search location...", class: "search"
@@ -28,4 +28,3 @@
     </div>
   </div>
 </div>
-
