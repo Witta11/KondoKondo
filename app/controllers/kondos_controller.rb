@@ -19,6 +19,10 @@ class KondosController < ApplicationController
         
   def new
     @kondo = Kondo.new
+    if params[:location]
+      @location = params[:location]
+      @kondo.location = @location
+    end
     authorize @kondo
   end
         

@@ -5,4 +5,8 @@ class PagesController < ApplicationController
     # geocoded_by :location
     # after_validation :geocode, if: :will_save_change_to_location?
   end
+
+  def split
+    @location = params[:query]
+  end
 end

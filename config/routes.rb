@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
     resources :favorites
   end
+  get '/split', to: 'pages#split'
 end
