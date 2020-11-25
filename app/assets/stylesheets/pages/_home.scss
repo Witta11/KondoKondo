@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .container {
-  height: 70vh;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,23 +17,29 @@
   justify-content: space-around;
 }
 
-
-
-#query.search {
-  border-radius: 8px;
-  position: relative;
-  display: inline-block;
-  padding: 8px;
-  width: 140%;
-  border: 0;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.fas.fa-search.search {
-  position: absolute;
+.search-container {
+  display: flex;
 }
 
 button {
   background-color: transparent;
+}
+
+.input-group-append {
+  background-color: white;
+  border-radius: 0 19px 19px 0;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  padding: 6px;
+}
+
+#location.form-control.search {
+  position: relative;
+  vertical-align: top;
+  border-radius: 19px 0 0 19px;
+  display: inline-block;
+  padding: 8px;
+  width: 500px;
   border: 0;
+  box-shadow: 0 2px rgba(0,0,0,0.2);
+  height: 50px;
 }
