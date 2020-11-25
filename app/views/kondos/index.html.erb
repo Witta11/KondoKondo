@@ -1,36 +1,30 @@
-<%= render 'shared/navbar' %>
-<br><br>
-
 <div class="container mt-5">
 
 
   <% @kondos.each do |kondo| %>
     <div class="card-product">
-      <% if kondo.picture.nil? %>
-      <%#= cl_image_tag kondo.picture.key, crop: :fill %>
-      <%# else %>
-      <img src="<%= kondo.picture %>" alt="">
-      <% end %>
-      <div class="container-card">
+      <%= cl_image_tag kondo.image.key, height: 300, width: 400, crop: :fill %>
         <div class="card-product-infos">
-          <div class="row">
             <h1><%= kondo.title %></h1>
-          </div>
-          <div class="row">
             <h2><%= kondo.reserved %> - <%= kondo.active %></h2>
-          </div>
-          <div class="row">
             <p><%= kondo.description %></p>
-          </div>
-          <div class="row loc">
             <p><%= kondo.location %></p>
-          </div>
-          <div class="row">
-            <p><%= kondo.user.username %> offered by </p>
-          </div>
+            <p>Fetch it at <%= kondo.user.username %>'s place </p>
       </div>
     </div>
   <% end %>
+
+<%# <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div> %>
+
+
+
+
 <%# </div> %>
 
   <%# @kondos.each do |kondo| %>
