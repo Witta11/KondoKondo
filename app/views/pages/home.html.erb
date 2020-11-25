@@ -1,30 +1,33 @@
 <div class="container mt-5">
-  <div class="search-bar">
-    <div>
-      <h3>Scroll through your Hood</h3>
-      <%= form_tag split_path, class: "search-container", method: :get do %>
-         <%= text_field_tag :location,
-             params[:location],
-             placeholder: "Search location...", class: "form-control search"
-          %>
-        <div class="input-group-append">
-          <button class="btn" type="submit"><i class="fas fa-search search"></i></button>
-        </div>
-       <% end %>
+  <div class="row justify-content-center">
+      <!-- This div is centered and takes 6 columns -->
+    <div class="search-bar col-12 col-lg-6">
+      <div>
+        <p class="search-header">Type in your location</p>
+        <%= form_tag split_path, class: "search-container", method: :get do %>
+           <%= text_field_tag :location,
+               params[:location],
+               placeholder: "\xa0Search your hood...", class: "form-control search"
+            %>
+          <div class="input-group-append">
+            <button class="btn" type="submit"><i class="fas fa-search search"></i></button>
+          </div>
+         <% end %>
+      </div>
     </div>
-  </div>
-  <div class="info-blocks row">
-    <div class="block-one">
-      <h2>Find Treasures</h2>
-      <p></p>
+</div>
+  <div class="row info-blocks">
+    <div class="block col-12 col-lg-4">
+      <h2>Find old Treasures</h2>
+      <p>Did you ever scroll through your hood and found an old beautiful sofa lying around? With KondoKondo you know where to find the next gem.</p>
     </div>
-    <div class="block-two">
+    <div class="block col-12 col-lg-4">
       <h2>Reuse Locally</h2>
-      <p></p>
+      <p>Your neighbour might not like his old pair of shoes, but they are exactly what you've been looking for! We care about the environment and our future. KondoKondo makes reusing easily.</p>
     </div>
-    <div class="block-three">
+    <div class="block col-12 col-lg-4">
       <h2>Create a Community</h2>
-      <p></p>
+      <p>What if you'd realize that everything you need is already within reach? Connect with your neighbours and your hood by creating a strong community.</p>
     </div>
   </div>
 </div>
