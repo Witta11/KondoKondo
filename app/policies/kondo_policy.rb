@@ -3,13 +3,10 @@ class KondoPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-
-    # def index
-    #   return true
-    # end
+  end
 
     def create?
-      return true
+      true
     end
 
     def update?
@@ -20,5 +17,4 @@ class KondoPolicy < ApplicationPolicy
       record.user == user
     end
 
-  end
 end

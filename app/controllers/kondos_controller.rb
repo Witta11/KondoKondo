@@ -2,29 +2,49 @@ class KondosController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @kondos = policy_scope(Kondo).order(created_at: :desc)
-  #   if params[:query].present?
-  #     @movies = Movie.where("title ILIKE ?", "%#{params[:query]}%")
-  #   else
-  #     @movies = Movie.all
-  #   end
-    # authorize @kondos
+    if params[:query].present?
+      # @kondos = Kondo.__elasticsearch__.search(
+        #   query: {
+          #     multi_match: {
+            #       query: params[:query],
+            #       fields: ['location']
+            #     }
+            #   }
+            # ).results
+      @kondos = policy_scope(Kondo).where(location: params[:query]).order(created_at: :desc)
+    else
+      @kondos = policy_scope(Kondo).order(created_at: :desc)
+    end
   end
-
-  def show
-    @kondo = Kondo.find(params[:id])
+        
+  def new
+    @kondo = Kondo.new
     authorize @kondo
-
-    # @markers = [
-    #   {
-    #     lat: @kondo.latitude,
-    #     lng: @kondo.longitude
-    #   }
-    # ]
   end
+        
+  def create
+    @kondo = Kondo.new(set_params)
+    @kondo.user = current_user
+    @kondo.save
+    if @kondo.save
+      redirect_to kondos_path(@kondo)
+    else
+      render :new
+    end
+    authorize @kondo
+  end
+  
+  def destroy
+    @kondo = Kondo.find(params[:id])
+    @kondo.user = current_user
+    authorize @kondo
+    @kondo.delete
+    redirect_to kondos_path # redirect has to change to dashboard_path in upcoming version
+  end
+  
+  private
 
-  def kondo_params
+  def set_params
     params.require(:kondo).permit(:title, :description, :location, :image)
   end
-
 end
