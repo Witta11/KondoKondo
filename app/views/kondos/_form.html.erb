@@ -1,8 +1,14 @@
-<%= simple_form_for(kondo) do |f| %>
-  <%= f.input :title, placeholder: 'short description of kondo' %>
-  <%= f.input :description, placeholder: 'describe details of kondo' %>
-  <%= f.input :location, placeholder: 'enter street address where kondo needs to be picked up ' %>
-  <%= f.input :image, as: :file %>
+<%= simple_form_for(kondo, html: { class: "form"}) do |f| %>
+  <%= f.input :title, input_html: { class: "form-field" }, placeholder: 'short description of kondo' %>
+  <%= f.input :description, input_html: { class: "form-field" }, placeholder: 'describe details of kondo' %>
+  <%= f.input :location, input_html: { class: "form-field" }, placeholder: 'enter street address where kondo needs to be picked up ' %>
   <br>
-  <%= f.submit 'Upload your Kondo!', class: "btn-submit-form"%>
+  <label class="btn btn-outline-secondary">Upload a picture!
+    <span style="display:none;">
+      <%= f.input :image, as: :file, class: 'hidden' %>
+    </span>
+</label>
+<br>
+<br>
+  <%= f.submit 'Upload your Kondo!', class: "btn btn-outline-secondary"%>
 <% end %>
