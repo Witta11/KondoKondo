@@ -2,7 +2,11 @@
   <%= f.input :title, placeholder: 'short description of kondo' %>
   <%= f.input :description, placeholder: 'describe details of kondo' %>
   <%= f.input :location, placeholder: 'enter street address where kondo needs to be picked up ' %>
-  <%= f.input :image, as: :file %>
-  <br>
+  <label class="btn btn-outline-secondary">Upload a picture!
+    <span style="display:none;">
+      <%= f.input :image, as: :file, class: 'hidden' %>
+    </span>
+</label>
+<br>
   <%= f.submit 'Upload your Kondo!', class: "btn-submit-form"%>
 <% end %>
