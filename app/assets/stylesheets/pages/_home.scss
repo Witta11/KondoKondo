@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .container {
-  height: 90%;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,10 +11,6 @@
   align-items: center;
   justify-content: center;
   color: white;
-}
-
-.info-blocks {
-  justify-content: space-around;
 }
 
 .search-container {
@@ -28,7 +24,7 @@ button {
 .input-group-append {
   background-color: white;
   border-radius: 0 19px 19px 0;
-  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 2px rgba(0, 0, 0, 0.2);
   padding: 6px;
 }
 
@@ -40,6 +36,29 @@ button {
   padding: 8px;
   width: 500px;
   border: 0;
-  box-shadow: 0 2px rgba(0,0,0,0.2);
+  // box-shadow: 0 2px rgba(0,0,0,0.2);
   height: 50px;
+}
+
+.search-header {
+  margin: 10px;
+}
+
+.info-blocks {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.info-blocks h2 {
+  font-size: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+  font-weight: normal;
+}
+
+.info-blocks p {
+  font-size: 12px;
+  display: block;
+  margin: 0 24px 50px 24px;
 }
