@@ -3,8 +3,8 @@ class KondoPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-end
     def create?
       true
     end
