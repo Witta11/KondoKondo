@@ -2,16 +2,8 @@ class KondosController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    if params[:query].present?
-      # @kondos = Kondo.__elasticsearch__.search(
-      #   query: {
-      #     multi_match: {
-      #       query: params[:query],
-      #       fields: ['location']
-      #     }
-      #   }
-      # ).results
-      @kondos = policy_scope(Kondo).where(location: params[:query]).order(created_at: :desc)
+    if params[:location].present?
+      @kondos = policy_scope(Kondo).near(params[:location], 5, units: :km).order(created_at: :desc)
     else
       @kondos = policy_scope(Kondo).order(created_at: :desc)
     end
