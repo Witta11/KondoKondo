@@ -1,2 +1,10 @@
-<%= link_to 'Kondonate', new_kondo_path(:location => @location) %>
-<%= link_to 'Browse Kondos', kondos_path(:location => @location) %>
+<div class="split-container">
+  <div class="option-container">
+    <%= link_to image_tag('rocket.svg', :class=>"split-icon"), new_kondo_path(:location => @location) %>
+    <h5>Kondonate stuff</h5>
+  </div>
+  <div class="option-container">
+    <%= link_to image_tag('map.svg', :class=>"split-icon"), kondos_path(:location => @location) %>
+    <h5>Browse nearby Kondos</h5>
+  </div>
+</div>
