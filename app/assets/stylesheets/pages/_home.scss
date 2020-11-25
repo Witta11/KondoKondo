@@ -16,3 +16,24 @@
 .info-blocks {
   justify-content: space-around;
 }
+
+
+
+#query.search {
+  border-radius: 8px;
+  position: relative;
+  display: inline-block;
+  padding: 8px;
+  width: 140%;
+  border: 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.fas.fa-search.search {
+  position: absolute;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+}

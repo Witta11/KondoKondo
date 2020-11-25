@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require 'faker'
-# require 'csv'
+User.destroy_all
+Kondo.destroy_all
 
 puts "Start seeding Users..."
 
- 
+
 Friddi = User.create!(
     username: "Friddi",
     first_name: "Friedrich",
@@ -55,7 +55,7 @@ puts "Start seeding Kondos..."
     title: "My first Demo tape from 1995",
     description: "I originally recorded it when I was still a teenager and made it a Kondo so that you can have maximum joy of Rap vibes from the past!",
     picture:"https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8dmludGFnZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=600&q=60",
-    location: "Hagelberger Str. 10-15 10965 Berlin",
+    location: "Hagelberger Str. 10-15, 10965 Berlin",
     user: Friddi,
     reserved: false,
     active: true
@@ -103,5 +103,7 @@ puts "Start seeding Kondos..."
 
 puts "End seeding Kondos, #{Kondo.count} created ..."
 
+
+berlin_districts = [ "Charlottenburg-Wilmersdorf", "Friedrichshain-Kreuzberg", "Lichtenberg", "Marzahn-Hellersdorf", "Mitte", "Neukölln", "Pankow", "Reinickendorf", "Spandau", "Steglitz-Zehlendorf", "Tempelhof-Schöneberg", "Treptow-Köpenick" ]
 
 
