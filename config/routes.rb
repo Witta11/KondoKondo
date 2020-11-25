@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :kondos, only: [:index, :new, :create, :destroy] do
     resources :favorites
   end
+  get '/split', to: 'pages#split'
 end
