@@ -28,8 +28,7 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'pg_search', '~> 2.3.0'
-gem 'elasticsearch-model'
+gem 'geocoder'
 
 gem 'devise'
 
@@ -39,9 +38,9 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
-gem 'dotenv-rails', groups: [:development, :test]
 
-group :development, :test do  gem 'pry-byebug'
+group :development, :test do
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
 
