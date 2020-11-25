@@ -17,19 +17,23 @@
   justify-content: space-around;
 }
 
-.search-container {
-  position: relative;
-}
 
-.search {
+
+#query.search {
   border-radius: 8px;
-  position: absolute;
+  position: relative;
   display: inline-block;
   padding: 8px;
-  width: 460px;
+  width: 140%;
+  border: 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .fas.fa-search.search {
-  left: 13em;
-  bottom: -1em;
+  position: absolute;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
 }
