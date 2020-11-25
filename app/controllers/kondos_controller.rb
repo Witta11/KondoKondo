@@ -4,24 +4,24 @@ class KondosController < ApplicationController
   def index
     if params[:query].present?
       # @kondos = Kondo.__elasticsearch__.search(
-      #   query: {
-      #     multi_match: {
-      #       query: params[:query],
-      #       fields: ['location']
-      #     }
-      #   }
-      # ).results
+        #   query: {
+          #     multi_match: {
+            #       query: params[:query],
+            #       fields: ['location']
+            #     }
+            #   }
+            # ).results
       @kondos = policy_scope(Kondo).where(location: params[:query]).order(created_at: :desc)
     else
       @kondos = policy_scope(Kondo).order(created_at: :desc)
     end
   end
-
+        
   def new
     @kondo = Kondo.new
     authorize @kondo
   end
-
+        
   def create
     @kondo = Kondo.new(set_params)
     @kondo.user = current_user
@@ -33,7 +33,7 @@ class KondosController < ApplicationController
     end
     authorize @kondo
   end
-
+  
   def destroy
     @kondo = Kondo.find(params[:id])
     @kondo.user = current_user
@@ -41,10 +41,10 @@ class KondosController < ApplicationController
     @kondo.delete
     redirect_to kondos_path # redirect has to change to dashboard_path in upcoming version
   end
-
-private
+  
+  private
 
   def set_params
-    params.require(:kondo).permit(:title, :description, :location, :picture)
+    params.require(:kondo).permit(:title, :description, :location, :image)
   end
 end
