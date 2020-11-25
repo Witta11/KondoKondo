@@ -1,18 +1,24 @@
 .split-icon {
   width: 250px;
-  margin: 50px;
+  transition: width 0.5s ease;
+  &:hover {
+    width: 270px;
+  }
 }
 
 .split-container {
   display: flex;
   justify-content: center;
   margin-top: 150px;
+  height: 100vh;
 
-    h5 {
+    p {
       color: $white;
     }
 }
 
 .option-container {
-text-align: center;
+  height: 400px;
+  width: 400px;
+  text-align: center;
 }
