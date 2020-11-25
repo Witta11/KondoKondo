@@ -1,9 +1,10 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Cabin", sans-serif;
+$body-font: 'Montserrat', sans-serif;
 $headers-font: 'Raleway', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
