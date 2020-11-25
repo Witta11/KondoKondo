@@ -1,8 +1,10 @@
 .split-icon {
-  width: 250px;
+  width: 300px;
   transition: width 0.5s ease;
+  opacity: 0.7;
   &:hover {
-    width: 270px;
+    width: 320px;
+    opacity: 1;
   }
 }
 
@@ -14,6 +16,10 @@
 
     p {
       color: $white;
+      font-family: $headers-font;
+      font-weight: bold;
+      font-size: 16px;
+      // letter-spacing: 1px;
     }
 }
 
@@ -21,4 +27,11 @@
   height: 400px;
   width: 400px;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.subtext-container {
+  position: absolute;
+  margin-top: 240px;
 }

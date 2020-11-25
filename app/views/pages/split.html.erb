@@ -1,9 +1,12 @@
+<div>
+  <h3>Step 2: Choose your action</h3>
+</div>
 <div class="split-container">
   <div class="option-container">
     <div>
       <%= link_to image_tag('rocket.svg', :class=>"split-icon"), new_kondo_path(:location => @location) %>
     </div>
-    <div>
+    <div class="subtext-container">
       <p>Kondonate stuff</p>
     </div>
   </div>
@@ -11,8 +14,8 @@
     <div>
       <%= link_to image_tag('map.svg', :class=>"split-icon"), kondos_path(:location => @location) %>
     </div>
-    <div>
-      <p>Browse nearby Kondos</p>
+    <div class="subtext-container">
+      <p>Browse Kondos nearby</p>
     </div>
   </div>
 </div>
