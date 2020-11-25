@@ -2,30 +2,15 @@
   <div class="search-bar">
     <div>
       <h3>Scroll through your Hood</h3>
-
       <%= form_tag split_path, class: "search-container", method: :get do %>
          <%= text_field_tag :location,
              params[:location],
              placeholder: "Search location...", class: "form-control search"
           %>
-          <%= link_to split_path do %>
-          <p><i class="fas fa-search search"></i></p>
-          <% end %>
-        <!-- <div class="input-group-append">
-          <a href="/split_path"><button class="btn" type="button"><i class="fas fa-search search"></i></button></a>
+        <div class="input-group-append">
+          <button class="btn" type="submit"><i class="fas fa-search search"></i></button>
         </div>
-       <% end %> -->
-<!-- =======
-      <%= form_tag split_path, class: "search-container", method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          placeholder: "Search location...", class: "search"
-        %>
-        <%= button_tag do %>
-        <i class="fas fa-search search"></i>
-        <% end %>
-      <% end %>
->>>>>>> master -->
+       <% end %>
     </div>
   </div>
   <div class="info-blocks row">
