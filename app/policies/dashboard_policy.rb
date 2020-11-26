@@ -1,12 +1,10 @@
-class DashboardPolicy < Struct.new(:user, :dashboard)
-  class Scope < Scope
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
-  end
-
+ class DashboardPolicy < Struct.new(:user, :dashboard)
+   class Scope
+     def resolve
+       scope
+     end
+   end
   def index?
-    true
+     true
   end
 end

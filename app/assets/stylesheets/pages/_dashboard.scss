@@ -1,0 +1,35 @@
+.dashboard-header {
+  color: white;
+}
+
+.boxes {
+  justify-content: space-between;
+}
+
+.dash-box {
+  background-color: white;
+  height: 100vh;
+  margin: 16px;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+// .box-content {
+//   padding: 16px;
+// }
+
+.kondo {
+  padding: 8px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+}
+
+  .kondo-title {
+    font-size: 20px;
+  }
+  .kondo-desc {
+    font-size: 12px;
+  }
+  .kondo-status {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
