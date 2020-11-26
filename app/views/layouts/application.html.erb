@@ -11,7 +11,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body style="background-color: #EEA243;">
+  <% if params[:controller] == "kondos" && params[:action] == "new"%>
+    <% background = "#AA6373" %>
+  <% else %>
+    <% background = "#EEA243" %>
+  <% end %>
+
+  <body style="background-color: <%= background %>">
     <div id="main">
 <!-- <%= render 'shared/flashes' %> -->
     <div class="page-container">

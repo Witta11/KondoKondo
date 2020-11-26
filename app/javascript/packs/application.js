@@ -31,20 +31,19 @@ import "bootstrap";
 import { initAutocomplete } from '../plugins/init_autocomplete';
 document.addEventListener('turbolinks:load', () => {
  initAutocomplete();
+ document.getElementById("open").addEventListener("click", openNav);
+ /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+ function openNav() {
+   document.getElementById("mySidenav").style.width = "250px";
+   document.getElementById("main").style.marginRight = "250px";
+   document.querySelector(".fa-bars").style.display = "none"
+ }
+
+ document.getElementById("close").addEventListener("click", closeNav);
+ /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+ function closeNav() {
+   document.getElementById("mySidenav").style.width = "0";
+   document.getElementById("main").style.marginRight = "0";
+   document.querySelector(".fa-bars").style.display = ""
+ }
 });
-
-document.getElementById("open").addEventListener("click", openNav);
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginRight = "250px";
-  document.querySelector(".fa-bars").style.display = "none"
-}
-
-document.getElementById("close").addEventListener("click", closeNav);
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginRight = "0";
-  document.querySelector(".fa-bars").style.display = ""
-}
