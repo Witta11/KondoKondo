@@ -38,6 +38,7 @@ document.getElementById("open").addEventListener("click", openNav);
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginRight = "250px";
+  document.querySelector(".fa-bars").style.display = "none"
 }
 
 document.getElementById("close").addEventListener("click", closeNav);
@@ -45,4 +46,5 @@ document.getElementById("close").addEventListener("click", closeNav);
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginRight = "0";
+  document.querySelector(".fa-bars").style.display = ""
 }

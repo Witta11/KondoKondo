@@ -3,20 +3,24 @@
   background: transparent;
 }
 
-.kondo-link {
-  font-size: 32px;
-  color: white;
-}
-
-.kondo-link:hover {
-  text-decoration: none;
-  opacity: 1;
-  color: grey;
-}
+// .kondo-link {
+//   font-size: 28px;
+//   color: white;
+// }
+//
+// .kondo-link:hover {
+//   text-decoration: none;
+//   // opacity: 1;
+//   // color: grey;
+// }
 
 .fa-bars:before {
   color: white;
-  font-size: 24px;
+  font-size: 18px;
+}
+
+.fa-bars {
+  cursor: pointer;
 }
 
 /* The side navigation menu */
@@ -37,7 +41,7 @@
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   color: #818181;
   display: block;
   transition: 0.3s;
