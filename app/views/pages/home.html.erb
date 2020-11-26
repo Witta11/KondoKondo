@@ -1,16 +1,16 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
+<div class="main-container mt-5">
+  <div class="row justify-content-center" style="margin-top: 150px">
       <!-- This div is centered and takes 6 columns -->
     <div class="search-bar col-12 col-lg-6">
       <div>
-        <p class="search-header">Type in your location</p>
+        <h4 class="search-header" style="font-weight: bold">Type in your location ...</h4>
         <%= form_tag split_path, class: "search-container", method: :get do %>
            <%= text_field_tag :location,
                params[:location],
                placeholder: "\xa0Search your hood...", class: "form-control search"
             %>
           <div class="input-group-append">
-            <button class="btn" type="submit"><i class="fas fa-search search"></i></button>
+            <button class="button-search" type="submit"><i class="fas fa-search search"></i></button>
           </div>
          <% end %>
       </div>

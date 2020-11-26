@@ -1,9 +1,9 @@
 class FavoritePolicy < ApplicationPolicy
-    class Scope < Scope
-      def resolve
-        scope.all
-      end
+  class Scope < Scope
+    def resolve
+      scope.all
     end
+  end
 
   def index?
     true
@@ -13,9 +13,9 @@ class FavoritePolicy < ApplicationPolicy
     !user.owner?(record)
   end
 
-    # def update?
-    #   record.user == user
-    # end
+  # def update?
+  #   record.user == user
+  # end
 
   def destroy?
     record.user == user

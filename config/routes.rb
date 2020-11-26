@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :kondos, only: [:index, :new, :create, :destroy, :edit, :update] do
+  resources :kondos, only: [:index, :new, :create, :destroy, :edit, :update, :reserve] do
     resources :favorites, only: [:create]
   end
 
@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :favorites, only: [:destroy]
 
   get '/split', to: 'pages#split'
+
+  post '/dashboard/kondo_update', to: 'kondos#reserve'
 end

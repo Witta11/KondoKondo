@@ -31,6 +31,7 @@
             <% if kondo.active %>
               <p class="kondo-status">- Your Kondo is active</p>
             <% end %>
+            <%= link_to "button", dashboard_kondo_update_path(:kondo_id => kondo.id), method: :post %>
           </div>
         <% end %>
       </div>
