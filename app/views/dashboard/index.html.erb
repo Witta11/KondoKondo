@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h1>Dashboard</h1>
+  <div class="boxes">
+    <div class="messages">
+
+    </div>
+    <div class="favorites">
+
+    </div>
+    <div class="kondos">
+      <% @kondos.each do |kondo|%>
+      <%= kondo.title %>
+      <% end %>
+    </div>
+  </div>
+</div>
