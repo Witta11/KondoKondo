@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create]
   end
 
-  resources :dashboard, only: [:index]
+  get 'dashboard', to: 'dashboard#show', as: :dashboard
 
   resources :favorites, only: [:destroy]
 
