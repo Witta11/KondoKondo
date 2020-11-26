@@ -51,8 +51,7 @@ class KondosController < ApplicationController
     authorize @kondo
     @kondo.reserved = !@kondo.reserved
     @kondo.save!
-    redirect_to dashboard_index_path
-
+    redirect_to dashboard_path
   end
 
   def destroy
