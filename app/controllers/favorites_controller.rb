@@ -13,6 +13,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
     authorize @favorite
     @favorite.destroy
-    redirect_to kondos_path
+    get "/kondos" => redirect_to kondos_path
+    get "/dashboard" => redirect_to dashboard_index_path
   end
 end
