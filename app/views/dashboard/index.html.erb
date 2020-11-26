@@ -1,0 +1,34 @@
+<div class="main-container">
+  <p class="dashboard-header">Dashboard</p>
+  <div class="boxes">
+    <div class="dash-box">
+      <div class="box-content">
+      <p>My Favorites</p>
+      </div>
+    </div>
+    <div class="dash-box">
+      <div class="box-content">
+      <p>My Messages</p>
+      </div>
+    </div>
+    <div class="dash-box">
+      <div class="box-content">
+        <p>My Kondos</p>
+        <% @kondos.each do |kondo|%>
+          <div class="kondo">
+            <h1 class="kondo-title"><i class="fas fa-gem"></i>  <%= kondo.title %></h1>
+            <p class="kondo-desc"><%= kondo.description %></p>
+            <% if kondo.reserved %>
+              <p class="kondo-status">- This item is reserved</p>
+              <% else %>
+              <p class="kondo-status">- This item is not yet reserved</p>
+            <% end %>
+            <% if kondo.active %>
+              <p class="kondo-status">- Your Kondo is active</p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
