@@ -21,22 +21,31 @@ button {
   background-color: transparent;
 }
 
+.btn {
+    background: #2DC8C8;
+    border-radius: 50%;
+}
+
+.fa-search:before {
+  color: white;
+}
+
 .input-group-append {
   background-color: white;
-  border-radius: 0 19px 19px 0;
-  // box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0 24px 24px 0;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
   padding: 6px;
 }
 
 #location.form-control.search {
   position: relative;
   vertical-align: top;
-  border-radius: 19px 0 0 19px;
+  border-radius: 24px 0 0 24px;
   display: inline-block;
   padding: 8px;
   width: 500px;
   border: 0;
-  // box-shadow: 0 2px rgba(0,0,0,0.2);
+  box-shadow: 0 2px rgba(0,0,0,0.2);
   height: 50px;
 }
 
