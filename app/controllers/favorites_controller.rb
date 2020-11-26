@@ -8,7 +8,7 @@ class FavoritesController < ApplicationController
     @favorite.save
     redirect_to kondos_path
   end
-  
+
   def destroy
     @favorite = Favorite.find(params[:id])
     authorize @favorite

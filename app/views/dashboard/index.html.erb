@@ -4,6 +4,11 @@
     <div class="dash-box">
       <div class="box-content">
       <p>My Favorites</p>
+        <% @favorites.each do |fav| %>
+       <h1 class="kondo-title"><i class="fas fa-heart"></i>  <%= fav.kondo.title %></h1>
+        <%= link_to 'Unfavorite', favorite_path(fav), method: :delete %>
+        <%= link_to 'Message Kondonator'%>
+        <% end %>
       </div>
     </div>
     <div class="dash-box">
