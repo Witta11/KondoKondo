@@ -6,3 +6,10 @@
       </div>
   </div>
 </div>
+
+
+<% if @kondo.reserved == "false" %>
+  <%= link_to(kondo_path(@kondo.id, reserved: true), method: :patch)  %>
+<% else %>
+  <%= link_to(kondo_path(@kondo.id, reserved: false), method: :patch)  %>
+<%= @kondo.reserved %>

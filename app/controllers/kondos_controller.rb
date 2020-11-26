@@ -46,6 +46,10 @@ class KondosController < ApplicationController
     # no need for app/views/restaurants/update.html.erb
   end
 
+  # def reserve
+  #   @reserved = !reserved
+  # end
+
   def destroy
     @kondo = Kondo.find(params[:id])
     @kondo.user = current_user
@@ -57,6 +61,6 @@ class KondosController < ApplicationController
   private
 
   def set_params
-    params.require(:kondo).permit(:title, :description, :location, :image)
+    params.require(:kondo).permit(:title, :description, :location, :image, :reserved)
   end
 end
