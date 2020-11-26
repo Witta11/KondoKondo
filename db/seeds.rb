@@ -17,7 +17,7 @@ Kondo.destroy_all
 puts "Start seeding Users..."
 
 
-Friddi = User.create!(
+friddi = User.create!(
     username: "Friddi",
     first_name: "Friedrich",
     last_name: "Hegel",
@@ -25,7 +25,7 @@ Friddi = User.create!(
     password: "123456"
 )
 
-Kalle = User.create!(
+kalle = User.create!(
     username: "Kalle",
     first_name: "Karl",
     last_name: "Marx",
@@ -33,7 +33,7 @@ Kalle = User.create!(
     password: "123456"
 )
 
-Teddy = User.create!(
+teddy = User.create!(
     username: "Teddy",
     first_name: "Theodor",
     last_name: "Adorno",
@@ -41,11 +41,27 @@ Teddy = User.create!(
     password: "123456"
 )
 
-Fritzi = User.create!(
+fritzi = User.create!(
     username: "Fritzi",
     first_name: "Friedrich",
     last_name: "Nietzsche",
     email: "Friedrich.Nietzsche@gmail.com",
+    password: "123456"
+)
+
+herb = User.create!(
+    username: "herb",
+    first_name: "Herbert",
+    last_name: "Markuse",
+    email: "herbert.markuse@gmail.com",
+    password: "123456"
+)
+
+horki = User.create!(
+    username: "horki",
+    first_name: "Max",
+    last_name: "Horkheimer",
+    email: "max.horkheimer@gmail.com",
     password: "123456"
 )
 
@@ -62,19 +78,12 @@ kondo1 = Kondo.new(
     title: "My first Demo tape from 1995",
     description: "I originally recorded it when I was still a teenager and made it a Kondo so that you can have maximum joy of Rap vibes from the past!",
     location: "Hagelberger Str. 10-15 10965 Berlin",
-    user: Friddi,
+    user: friddi,
     reserved: false,
     active: true
     )
     kondo1.image.attach(io: file, filename: 'tape.png', content_type: 'image/png')
     kondo1.save
-    p kondo1
-
-
-    # file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-    # article = Article.new(title: 'NES', body: "A great console")
-    # article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
 
     
     file = URI.open("https://images.unsplash.com/photo-1518893883800-45cd0954574b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=674&q=80")
@@ -82,7 +91,7 @@ kondo1 = Kondo.new(
         title: "My Grandma's Grammophone",
         description: "Although very good in shape, I am emotionally not capable of having it around me anymore, so please come by and fetch it ",
         location: "Kreuzbergstraße 17a, 10965 Berlin",
-        user: Fritzi,
+        user: fritzi,
         reserved: false,
         active: true
         )
@@ -96,7 +105,7 @@ kondo1 = Kondo.new(
     title: "Vintage Pocket Watch",
     description: "Just found this very old and sadly not functional watch when tidying my stuff during lock-down, for s.o. to repair maybe? ",
     location: "Nostitzstraße 15, 10961 Berlin",
-    user: Fritzi,
+    user: fritzi,
     reserved: false,
     active: true
     )
@@ -108,22 +117,52 @@ kondo1 = Kondo.new(
     title: "Some old maps-posters for you?",
     description: "Hidden in an old box I found these old maps of Berlin, I kept some for myself, feel free to stop by and get one!",
     location: "141, Bergmannstraße, 10961 Berlin",
-    user: Kalle,
+    user: kalle,
     reserved: false,
     active: true
     )
   kondo4.image.attach(io: file, filename: 'maps.png', content_type: 'image/png')
   kondo4.save
 
-#   Kondo.create!(
-#     title: "",
-#     description: "",
-#     picture:"",
-#     location: "",
-#     user: ,
-#     reserved: false,
-#     active: true
-#     )
+
+  file = URI.open("https://images.unsplash.com/photo-1488654091480-0a2443430a4a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjJ8fHZpbnRhZ2V8ZW58MHx8MHw%3D&auto=format&fit=crop&w=600&q=60")
+  kondo5 = Kondo.new(
+    title: "Old tin Boxes",
+    description: "used those in my kitchen, don't use them anymore",
+    location: "Grunowstraße 11-21, 13187 Berlin",
+    user: teddy,
+    reserved: false,
+    active: true
+    )
+  kondo5.image.attach(io: file, filename: 'tinBoxes.png', content_type: 'image/png')
+  kondo5.save
+
+
+  file = URI.open("https://images.unsplash.com/photo-1516962126636-27ad087061cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fHZpbnRhZ2V8ZW58MHx8MHw%3D&auto=format&fit=crop&w=600&q=60")
+  kondo6 = Kondo.new(
+    title: "Polaroid still working",
+    description: "The Camera is still working but I don't find the rest to work",
+    location: "Lotosweg 30-34, 13467 Berlin",
+    user: horki,
+    reserved: false,
+    active: true
+    )
+  kondo6.image.attach(io: file, filename: 'polaroid.png', content_type: 'image/png')
+  kondo6.save
+
+
+  # KONDO-TEMPLATE
+  # file = URI.open("")
+  # kondoX = Kondo.new(
+  #   title: "",
+  #   description: "",
+  #   location: "",
+  #   user: ,
+  #   reserved: false,
+  #   active: true
+  #   )
+  # kondoX.image.attach(io: file, filename: 'X-name.png', content_type: 'image/png')
+  # kondoX.save
 
 puts "End seeding Kondos, #{Kondo.count} created ..."
 
