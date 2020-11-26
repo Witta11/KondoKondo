@@ -8,8 +8,8 @@
 </div>
 
 
-<% if @kondo.reserved == "false" %>
-  <%= link_to(kondo_path(@kondo.id, reserved: true), method: :patch)  %>
-<% else %>
-  <%= link_to(kondo_path(@kondo.id, reserved: false), method: :patch)  %>
+<%# if @kondo.reserved == "false" %>
+  <%= link_to "button",kondo_path(@kondo.id), method: :put, data: {reserved: "true"}  %>
+<%# else %>
+  <%#= link_to(kondo_path(@kondo.id, reserved: false), method: :patch)  %>
 <%= @kondo.reserved %>

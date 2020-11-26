@@ -13,6 +13,10 @@ class KondoPolicy < ApplicationPolicy
       true
     end
 
+    def reserve?
+    record.user == user
+    end
+
 
   def update?
     record.user == user
