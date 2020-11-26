@@ -4,7 +4,12 @@
 
 }
 .form-field {
-  background-color: $light-gray;
-  border-bottom-color: #F3A738;
-
+  background-color: $kondopurple;
+  border-bottom-width: 1px;
+  border-bottom-color: $white;
+  height: 50px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: $white;
 }
