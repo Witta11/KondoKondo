@@ -30,6 +30,22 @@ class KondosController < ApplicationController
     authorize @kondo
   end
 
+  def edit
+    @kondo = Kondo.find(params[:id])
+    authorize @kondo
+  end
+
+  def update
+    @kondo = Kondo.find(params[:id])
+    if @kondo.update(set_params)
+      redirect_to kondos_path(@kondo)
+    else
+      render :edit
+    end
+    authorize @kondo
+    # no need for app/views/restaurants/update.html.erb
+  end
+
   def destroy
     @kondo = Kondo.find(params[:id])
     @kondo.user = current_user
