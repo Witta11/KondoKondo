@@ -32,6 +32,7 @@ class KondosController < ApplicationController
 
   def edit
     @kondo = Kondo.find(params[:id])
+    authorize @kondo
   end
 
   def destroy
