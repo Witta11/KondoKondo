@@ -46,6 +46,15 @@ class KondosController < ApplicationController
     # no need for app/views/restaurants/update.html.erb
   end
 
+  def reserve
+    @kondo = Kondo.find(params[:kondo_id])
+    authorize @kondo
+    @kondo.reserved = !@kondo.reserved
+    @kondo.save!
+    redirect_to dashboard_index_path
+
+  end
+
   def destroy
     @kondo = Kondo.find(params[:id])
     @kondo.user = current_user
@@ -57,6 +66,6 @@ class KondosController < ApplicationController
   private
 
   def set_params
-    params.require(:kondo).permit(:title, :description, :location, :image)
+    params.require(:kondo).permit(:title, :description, :location, :image, :reserved)
   end
 end
