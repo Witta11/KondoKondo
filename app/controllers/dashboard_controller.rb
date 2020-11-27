@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 
-  def index
+  def show
     @kondos = current_user.kondos
-    skip_policy_scope
+    authorize :dashboard, :show?
   end
 end
