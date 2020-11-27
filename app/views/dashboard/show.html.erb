@@ -45,7 +45,10 @@
             <% if kondo.active %>
               <i class="far fa-eye"></i>  <p class="kondo-status">Your Kondo is active</p>
             <% end %>
-
+            <br>
+            <%= link_to edit_kondo_path(kondo), method: :post do  %>
+            <i class="far fa-edit"></i>  <p class="kondo-status">Edit your Kondo</p>
+            <% end %>
           </div>
         <% end %>
       </div>
