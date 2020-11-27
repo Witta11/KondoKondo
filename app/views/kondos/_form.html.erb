@@ -4,11 +4,23 @@
   <%= f.input :location, input_html: { class: "form-field" }, label: false, placeholder: 'Where can the Kondo be picked up?' %>
   <br>
 <div class="buttons-container">
-  <label class="btn btn-ghost" style="margin: 0">Upload a photo
-    <span style="display:none;">
-    <%= f.input :image, as: :file, class: 'hidden' %>
-    </span>
-  </label>
+  <div height="40">
+    <%= f.input :image, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'btn-height btn btn-ghost'}, label: 'Upload a photo' %>
+    <br>
+    <%= image_tag "", width: 50, class: "hidden", id: "photo-preview" %>
+  </div>
+  <div height="40">
     <%= f.submit 'Submit', class: "btn btn-main"%>
+  </div>
 </div>
 <% end %>
+
+
+
+
+<!--   <label class="btn btn-ghost" style="margin: 0">Upload a photo
+    <span style="display:none;">
+    <%#= f.input :image, as: :file, class: 'hidden' %>
+    </span>
+  </label>
+ -->
