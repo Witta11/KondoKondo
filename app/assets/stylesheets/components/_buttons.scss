@@ -1,0 +1,30 @@
+.btn-main {
+  color: $white;
+  background-color: $kondocyan;
+  border: 1px solid $kondocyan;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-main:hover {
+  opacity: 0.6;
+  color: $white;
+}
+
+.btn-ghost {
+  color: $white;
+  border: 1px solid $white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: $white;
+}
