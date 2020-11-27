@@ -7,7 +7,7 @@
         <% @favorites.each do |fav| %>
         <div class="d-flex">
           <%= link_to favorite_path(fav, redirect_to: "dashboard"), method: :delete do %>
-           <i data-toggle="tooltip" data-placement="top" title="Unfavorite Kondo" class="fas fa-heart mr-2"></i>
+           <i data-toggle="tooltip" data-placement="top" title="Unfavore Kondo" class="fas fa-heart mr-2"></i>
           <% end %>
           <h1 class="kondo-title"><%= fav.kondo.title %></h1>
 
