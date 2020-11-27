@@ -17,5 +17,4 @@ class User < ApplicationRecord
   def owner?(kondo)
     kondo.user == self
   end
-
 end
