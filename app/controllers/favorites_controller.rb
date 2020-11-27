@@ -13,7 +13,12 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
     authorize @favorite
     @favorite.destroy
-    get "/kondos" => redirect_to kondos_path
-    get "/dashboard" => redirect_to dashboard_index_path
+    if params[:controller] == "dashboard" && params[:action] == "index"
+      redirect_to dashboard_index_path
+    else params[:controller] == "kondos" && params[:action] == "index"
+      redirect_to kondos_path
+    end
+    # get "/kondos" => redirect_to kondos_path
+    # get "/dashboard" => redirect_to dashboard_index_path
   end
 end
