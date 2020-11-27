@@ -50,4 +50,9 @@ document.addEventListener('turbolinks:load', () => {
    document.getElementById("main").style.marginRight = "0";
    document.querySelector(".fa-bars").style.display = ""
  }
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 });
+
+

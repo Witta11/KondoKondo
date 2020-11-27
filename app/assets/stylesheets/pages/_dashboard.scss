@@ -13,6 +13,28 @@
   font-size: 20px;
 }
 
+.fa-heart:before {
+  color: black;
+}
+
+.fa-comments {
+  color: black;
+}
+
+.fa-comments:hover {
+  color: #AA6373;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #AA6373;
+}
 // DIV for MY KONDOS
 .boxes {
   display: flex;
@@ -30,7 +52,7 @@
   margin: 16px;
   border-radius: 16px;
   padding: 32px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .kondo {
@@ -46,5 +68,6 @@
   .kondo-status {
     font-size: 12px;
     margin-bottom: 0;
+    display: inline-block;
   }
 }

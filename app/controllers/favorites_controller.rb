@@ -10,10 +10,12 @@ class FavoritesController < ApplicationController
     @favorite.save
     redirect_to kondos_path(:location => params[:location], :anchor => "kondo-index-#{@kondo.id}")
   end
-  
+
   def destroy
     @favorite = Favorite.find(params[:id])
+    if params[:kondo_id]
     @kondo = Kondo.find(params[:kondo_id])
+    end
     # authorize @kondo
     authorize @favorite
     @favorite.destroy
