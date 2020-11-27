@@ -18,6 +18,8 @@ const displayPreview = (input) => {
     }
     reader.readAsDataURL(input.files[0])
     document.getElementById('photo-preview').classList.remove('hidden');
+    document.getElementById('photo-title').classList.remove('d-none');
+    document.querySelector('.image-border').style.border='2px solid black';
   }
 }
 

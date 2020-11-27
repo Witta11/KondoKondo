@@ -7,8 +7,11 @@
   <div height="40">
     <%= f.input :image, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'btn-height btn btn-ghost'}, label: 'Upload a photo' %>
     <br>
-    <%= image_tag "", width: 50, class: "hidden", id: "photo-preview" %>
+    <p style="font-size: 12px; color: lightgray" class="d-none" id="photo-title">Your Photo</p>
+    <div class="image-border">
+      <%= image_tag "", width: 46, class: "hidden", id: "photo-preview" %>
   </div>
+</div>
   <div height="40">
     <%= f.submit 'Submit', class: "btn btn-main"%>
   </div>
