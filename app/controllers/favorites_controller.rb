@@ -6,6 +6,7 @@ class FavoritesController < ApplicationController
     @favorite.user = current_user
     @favorite.kondo = Kondo.find(params[:kondo_id])
     @favorite.save
+    raise
     redirect_to kondos_path
   end
   
