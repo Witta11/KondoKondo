@@ -1,17 +1,17 @@
 
 <div class="container mt-5">
-<h2 class="h2">Explore awesome kondos nearby</h2>
-  <% @kondos.each do |kondo| %>
+  <h5 style="font-weight: bold">Kondos nearby</h5>
+  <p style="font-size: 14px; color: white">Browse through the things other people in your neighborhood don't need anymore.</p>
+  <div class="kondos-container">
+    <% @kondos.each do |kondo| %>
 
     <div class="card-product" id=<%="kondo-index-#{kondo.id}"%>>
       <% if kondo.image.attached? %>
-        <%= cl_image_tag kondo.image.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag kondo.image.key, height: 400, width: 400, crop: :fill %>
       <% end %>
         <div class="card-product-infos">
             <h2><%= kondo.title %></h2>
             <p><%= kondo.description %></p>
-            <p><%= kondo.location %></p>
-            <h2><%= kondo.reserved %> - <%= kondo.active %></h2>
             <p><% if policy(kondo).destroy? %>
               <%= link_to "delete kondo", kondo_path(kondo), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %></p>
             <% end %>
@@ -24,8 +24,14 @@
                 <% end %>
               <% end %>
             <% end %>
-            <p>Fetch it at <%= kondo.user.username %>'s place </p>
+
+          <div class="card-product-seller">
+            <p><strong>Kondor:</strong> <%= kondo.user.username %></p>
+            <p><strong>Pickup at:</strong> <%= kondo.location %></p>
+          </div>
+        </div>
+
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
