@@ -8,11 +8,15 @@ class FavoritesController < ApplicationController
     @favorite.save
     redirect_to kondos_path
   end
-  
+
   def destroy
     @favorite = Favorite.find(params[:id])
     authorize @favorite
     @favorite.destroy
-    redirect_to kondos_path
+    if params[:redirect_to] == "dashboard"
+      redirect_to dashboard_path
+    else
+      redirect_to kondos_path
+    end
   end
 end
