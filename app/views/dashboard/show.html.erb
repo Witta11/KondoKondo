@@ -1,9 +1,14 @@
-<div class="main-container">
+<div class="dash-container">
   <p class="dashboard-header">Dashboard</p>
   <div class="boxes">
     <div class="dash-box">
       <div class="box-content">
       <p>My Favorites</p>
+        <% @favorites.each do |fav| %>
+       <h1 class="kondo-title"><i class="fas fa-heart"></i>  <%= fav.kondo.title %></h1>
+        <%= link_to 'Unfavorite', favorite_path(fav, redirect_to: "dashboard"), method: :delete %>
+        <%= link_to 'Message Kondonator'%>
+        <% end %>
       </div>
     </div>
     <div class="dash-box">
