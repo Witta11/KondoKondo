@@ -1,7 +1,16 @@
 .form {
   border-radius:10px;
   padding:30px 40px;
-
+  input {
+    &::placeholder {
+      color: white;
+    }
+  }
+  textarea {
+    &::placeholder {
+      color: white;
+    }
+  }
 }
 .form-field {
   background-color: $kondopurple;
@@ -12,4 +21,10 @@
   border-left: none;
   border-right: none;
   color: $white;
+
+}
+
+#photo-preview {
+  border-radius: 3px
+
 }
