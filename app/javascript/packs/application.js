@@ -28,8 +28,12 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+import { previewImageOnFileSelect } from '../components/photo_preview';
+
+
 import { initAutocomplete } from '../plugins/init_autocomplete';
 document.addEventListener('turbolinks:load', () => {
+ previewImageOnFileSelect();
  initAutocomplete();
  document.getElementById("open").addEventListener("click", openNav);
  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
