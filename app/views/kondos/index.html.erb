@@ -3,7 +3,7 @@
 <h2 class="h2">Explore awesome kondos nearby</h2>
   <% @kondos.each do |kondo| %>
 
-    <div class="card-product">
+    <div class="card-product" id=<%="kondo-index-#{kondo.id}"%>>
       <% if kondo.image.attached? %>
         <%= cl_image_tag kondo.image.key, height: 300, width: 400, crop: :fill %>
       <% end %>
@@ -18,9 +18,9 @@
             <% if current_user %>
               <% if !current_user.owner?(kondo) %>
                 <% if current_user.favorite?(kondo) %>
-                  <%= link_to "delete as favourite", favorite_path(Favorite.find_by(kondo: kondo)), method: :delete, class:"btn btn-secondary" %>
+                  <%= link_to "delete as favourite", favorite_path(Favorite.find_by(kondo: kondo), :location => params[:location], :kondo_id => kondo.id), method: :delete, remote: true, class:"btn btn-secondary"%>
                 <% else %>
-                  <%= link_to "mark as favourite", kondo_favorites_path(kondo), method: :post, class:"btn btn-primary" %>
+                  <%= link_to "mark as favourite", kondo_favorites_path(kondo, :location => params[:location]), method: :post, remote: true, class:"btn btn-primary"%>
                 <% end %>
               <% end %>
             <% end %>
