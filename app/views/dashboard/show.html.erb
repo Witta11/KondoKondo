@@ -5,9 +5,14 @@
       <div class="box-content">
       <p>My Favorites</p>
         <% @favorites.each do |fav| %>
-       <h1 class="kondo-title"><i class="fas fa-heart"></i>  <%= fav.kondo.title %></h1>
-        <%= link_to 'Unfavorite', favorite_path(fav, redirect_to: "dashboard"), method: :delete %>
-        <%= link_to 'Message Kondonator'%>
+        <%= link_to favorite_path(fav, redirect_to: "dashboard"), method: :delete do %>
+        <i class="fas fa-heart"></i>
+        <% end %>
+       <h1 class="kondo-title"><%= fav.kondo.title %></h1>
+        <%= link_to '#' do %>
+        <i class="far fa-comments"></i> <%= fav.kondo.user.username %>
+        <% end %>
+        <br>
         <% end %>
       </div>
     </div>
@@ -24,14 +29,20 @@
             <h1 class="kondo-title"><i class="fas fa-gem"></i>  <%= kondo.title %></h1>
             <p class="kondo-desc"><%= kondo.description %></p>
             <% if kondo.reserved %>
-              <p class="kondo-status">- This item is reserved</p>
+              <%= link_to dashboard_kondo_update_path(:kondo_id => kondo.id), method: :post do %>
+              <i class="fas fa-toggle-on"></i>  <p class="kondo-status">This kondo is reserved</p>
+              <br>
+              <% end %>
               <% else %>
-              <p class="kondo-status">- This item is not yet reserved</p>
+                <%= link_to dashboard_kondo_update_path(:kondo_id => kondo.id), method: :post do %>
+                <i class="fas fa-toggle-off"></i>  <p class="kondo-status">This kondo is not yet reserved</p>
+                <br>
+                <% end %>
             <% end %>
             <% if kondo.active %>
-              <p class="kondo-status">- Your Kondo is active</p>
+              <i class="far fa-eye"></i>  <p class="kondo-status">Your Kondo is active</p>
             <% end %>
-            <%= link_to "button", dashboard_kondo_update_path(:kondo_id => kondo.id), method: :post %>
+
           </div>
         <% end %>
       </div>
