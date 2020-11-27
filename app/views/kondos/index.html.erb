@@ -12,6 +12,9 @@
           <div class="card-product-infos">
             <h6><%= kondo.title %></h6>
             <p><%= kondo.description %></p>
+            <%= link_to kondo_favorites_path(kondo) do %>
+            <i class="far fa-heart"></i>
+            <% end %>
           <div class="card-product-seller">
             <p><strong>Kondor:</strong> <%= kondo.user.username %></p>
             <p><strong>Pickup at:</strong> <%= kondo.location %></p>
