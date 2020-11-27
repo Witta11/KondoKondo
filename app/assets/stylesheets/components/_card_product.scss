@@ -1,26 +1,28 @@
 .card-product {
     overflow: hidden;
-    height: 150px;
+    height: 200px;
+    width: 500px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
     margin: 8px;
     border-radius: 4px;
+
   }
-  
+
   .card-product img {
     height: 100%;
-    width: 120px;
+    width: 200px;
     object-fit: cover;
   }
-  
+
   .card-product h2 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
   }
-  
+
   .card-product p {
     font-size: 12px;
     line-height: 1.4;
@@ -28,9 +30,12 @@
     margin-bottom: 0;
     margin-top: 8px;
   }
-  
+
   .card-product .card-product-infos {
     height: max-content;
     padding: 16px;
   }
-  
+
+  .card-product-seller {
+    margin-top: 20px
+  }
