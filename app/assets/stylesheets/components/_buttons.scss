@@ -29,3 +29,18 @@
   color: $white;
 }
 
+.btn-delete {
+  color: $white;
+  background-color: $kondored;
+  border: 1px solid $kondored;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-delete:hover {
+  opacity: 0.6;
+  color: $white;
+}
