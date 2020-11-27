@@ -5,10 +5,13 @@
       <div class="box-content">
       <p>My Favorites</p>
         <% @favorites.each do |fav| %>
-        <%= link_to favorite_path(fav, redirect_to: "dashboard"), method: :delete do %>
-        <button data-toggle="tooltip" data-placement="top" title="Tooltip on top"><i class="far fa-heart"></i></button>
-        <% end %>
-       <h1 class="kondo-title"><%= fav.kondo.title %></h1>
+        <div class="d-flex">
+          <%= link_to favorite_path(fav, redirect_to: "dashboard"), method: :delete do %>
+           <i data-toggle="tooltip" data-placement="top" title="Unfavorite Kondo" class="fas fa-heart mr-2"></i>
+          <% end %>
+          <h1 class="kondo-title"><%= fav.kondo.title %></h1>
+
+        </div>
         <%= link_to '#' do %>
         <i class="far fa-comments"></i> <%= fav.kondo.user.username %>
         <% end %>
@@ -26,7 +29,7 @@
         <p>My Kondos</p>
         <% @kondos.each do |kondo|%>
           <div class="kondo">
-            <h1 class="kondo-title"><i data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="far fa-heart"></i><%= kondo.title %></h1>
+            <h1 class="kondo-title"><%= kondo.title %></h1>
             <p class="kondo-desc"><%= kondo.description %></p>
             <% if kondo.reserved %>
               <%= link_to dashboard_kondo_update_path(:kondo_id => kondo.id), method: :post do %>
@@ -49,5 +52,3 @@
     </div>
   </div>
 </div>
-
-<!-- <i class="fas fa-gem"> -->
