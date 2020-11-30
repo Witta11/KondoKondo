@@ -3,9 +3,9 @@ class KondosController < ApplicationController
 
   def index
     if params[:location].present?
-      @kondos = policy_scope(Kondo).near(params[:location], 1, units: :km).order(created_at: :desc)
+      @kondos = policy_scope(Kondo).near(params[:location], 1, units: :km).order(created_at: :desc).where(active: true)
     else
-      @kondos = policy_scope(Kondo).order(created_at: :desc)
+      @kondos = policy_scope(Kondo).order(created_at: :desc).where(active: true)
     end
   end
 

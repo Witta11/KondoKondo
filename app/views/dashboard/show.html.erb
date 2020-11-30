@@ -19,6 +19,7 @@
                 <div class="card-product-seller">
                   <p><strong>Pickup at:</strong> <%= fav.kondo.location %></p>
                   <p><strong>Kondor:</strong> <%= fav.kondo.user.username %></p>
+                  <%#link_to 'Contact Kondor',  %>
                 </div>
             </div>
           </div>
@@ -61,11 +62,11 @@
                 <% end %>
                 <% if kondo.active %>
                   <%= link_to dashboard_kondo_active_path(:kondo_id => kondo.id) do %>
-                  <i data-toggle="tooltip" data-placement="top" title="Activate Kondo" class="far fa-eye"></i>
+                  <i data-toggle="tooltip" data-placement="top" title="Dectivate Kondo" class="far fa-eye"></i>
                 <% end %>
                 <% else %>
                   <%= link_to dashboard_kondo_active_path(:kondo_id => kondo.id) do %>
-                  <i data-toggle="tooltip" data-placement="top" title="Deactivate Kondo" class="far fa-eye-slash"></i>
+                  <i data-toggle="tooltip" data-placement="top" title="Activate Kondo" class="far fa-eye-slash"></i>
                   <% end %>
                 <% end %>
                 <%= link_to edit_kondo_path(kondo) do %>

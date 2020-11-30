@@ -1,6 +1,6 @@
 .card-product-three {
   overflow: hidden;
-  height: 200px;
+  height: 180px;
   width: 100%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -22,25 +22,26 @@
 
 .card-product-infos {
   padding: 16px;
-  height: 200px;
+  height: 180px;
 
   .card-product-header-white {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 8px;
     color: black;
   }
   .card-product-desc {
     font-size: 12px;
     line-height: 1.4;
     opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
+    margin: 12px 0;
   }
 }
 
+.icons {
+  text-align: center;
+}
+
 .icons i {
-  margin-top: 16px;
   padding-right: 16px;
 }
 
@@ -52,5 +53,5 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #AA6373;
+  color: grey;
 }
