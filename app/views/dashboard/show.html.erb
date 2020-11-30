@@ -24,7 +24,11 @@
             </div>
           </div>
         <% end %>
-
+        <%= link_to kondos_path do  %>
+        <div class="empty">
+          <i class="fas fa-plus"></i>
+        </div>
+        <% end %>
       </div>
     <div class="dash-box">
       <div class="box-content">
@@ -75,6 +79,11 @@
               </div>
             </div>
           </div>
+        <%= link_to new_kondo_path do  %>
+        <div class="empty">
+          <i class="fas fa-plus"></i>
+        </div>
+        <% end %>
         </div>
       <% end %>
       </div>
