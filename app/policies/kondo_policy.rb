@@ -5,18 +5,21 @@ class KondoPolicy < ApplicationPolicy
     end
   end
 
-    def index?
-      true
-    end
+  def index?
+    true
+  end
 
-    def create?
-      true
-    end
+  def create?
+    true
+  end
 
-    def reserve?
-    record.user == user
-    end
+  def reserve?
+  record.user == user
+  end
 
+  def random?
+    true
+  end
 
   def update?
     record.user == user

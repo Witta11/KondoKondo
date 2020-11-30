@@ -7,6 +7,18 @@ class KondosController < ApplicationController
     else
       @kondos = policy_scope(Kondo).order(created_at: :desc)
     end
+    @kondo = @kondos.sample
+  end
+
+  def random
+    if params[:location].present?
+      @kondos = policy_scope(Kondo).near(params[:location], 1, units: :km).order(created_at: :desc)
+    else
+      @kondos = policy_scope(Kondo).order(created_at: :desc)
+    end
+    @kondo = @kondos.sample
+    render layout: false
+    authorize @kondo
   end
 
   def new

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create]
   end
 
+  get 'kondos/random', to: 'kondos#random'
+
   get 'dashboard', to: 'dashboard#show', as: :dashboard
 
   resources :favorites, only: [:destroy]
