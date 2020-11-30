@@ -3,6 +3,16 @@
     <h5 style="font-weight: bold">Discover random Kondos nearby</h5>
     <p style="font-size: 14px; color: white">Browse through the things other people in your neighborhood don't need anymore.</p>
   </div>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openOption(event, 'Shuffle')">Shuffle</button>
+    <button class="tablinks" onclick="openOption(event, 'All')">All</button>
+  </div>
+
+  <div id="Shuffle" class="tabcontent">
+  <div id="All" class="tabcontent">
+
+
   <div class="kondos-container">
     <% @kondos.each do |kondo| %>
       <%#= render 'shared/grid-card', :kondo => kondo %>
