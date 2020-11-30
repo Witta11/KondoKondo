@@ -19,12 +19,23 @@
         <% end %>
       </div>
     </div>
+
+
+
     <div class="dash-box">
       <div class="box-content">
         <p>My Messages</p>
-        <%= Chatroom.where(user_id: current_user.id ).length %>
+        <% @chatrooms.each do |chatroom| %>
+        <%= chatroom.name %>
+        <%= chatroom.kondo.user.username %>
+        <%= chatroom.kondo.messages.last %>
+        <% end %>
+
       </div>
     </div>
+
+
+
     <div class="dash-box">
       <div class="box-content">
         <p>My Kondos</p>
