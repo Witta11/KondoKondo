@@ -54,6 +54,14 @@ class KondosController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def active
+    @kondo = Kondo.find(params[:kondo_id])
+    authorize @kondo
+    @kondo.active = !@kondo.active
+    @kondo.save!
+    redirect_to dashboard_path
+  end
+
   def destroy
     @kondo = Kondo.find(params[:id])
     @kondo.user = current_user

@@ -11,9 +11,6 @@
         <div class="card-product-infos">
           <h2><%= kondo.title %></h2>
           <p><%= kondo.description %></p>
-          <% if policy(kondo).destroy? %>
-            <%= link_to "delete kondo", kondo_path(kondo), method: :delete, data: {confirm: 'Are you sure you want to delete?'} %></p>
-          <% end %>
 
             <% if current_user && !current_user.owner?(kondo) %>
               <% if current_user.favorite?(kondo) %>

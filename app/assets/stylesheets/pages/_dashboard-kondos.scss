@@ -16,30 +16,32 @@
   object-fit: cover;
 }
 
-.card-product-three h2 {
-  font-size: 16px;
-  // padding-top: 4px;
-  // padding-bottom: 4px;
-  font-weight: bold;
-  margin: 0;
-  color: black;
+.d-flex {
+  justify-content: space-between;
 }
 
-.card-product-three p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product-three .card-product-infos {
-  display: inline-block;
+.card-product-infos {
   padding: 16px;
+  height: 200px;
+
+  .card-product-header-white {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: black;
+  }
+  .card-product-desc {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
 }
 
-.card-product-seller {
-  margin-top: 20px
+.icons i {
+  margin-top: 16px;
+  padding-right: 16px;
 }
 
 a {
