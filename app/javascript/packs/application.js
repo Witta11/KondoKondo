@@ -26,7 +26,13 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { initChatroomCable } from '../channels/chatroom_channel';
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  initChatroomCable();
+});
 // import { initSelect2 } from '../components/init_select2';
+
 
 import { previewImageOnFileSelect } from '../components/photo_preview';
 

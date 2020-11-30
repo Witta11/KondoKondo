@@ -12,7 +12,7 @@
           <h1 class="kondo-title"><%= fav.kondo.title %></h1>
 
         </div>
-        <%= link_to '#' do %>
+        <%= link_to chatrooms_path(:user_id => current_user, :kondo_id => fav.kondo), method: :post do %>
         <i class="far fa-comments"></i> <%= fav.kondo.user.username %>
         <% end %>
         <br>
@@ -21,7 +21,8 @@
     </div>
     <div class="dash-box">
       <div class="box-content">
-      <p>My Messages</p>
+        <p>My Messages</p>
+        <%= Chatroom.where(user_id: current_user.id ).length %>
       </div>
     </div>
     <div class="dash-box">

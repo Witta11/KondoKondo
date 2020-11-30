@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   get '/split', to: 'pages#split'
 
   post '/dashboard/kondo_update', to: 'kondos#reserve'
+
+  resources :chatrooms, only: [:show, :create] do 
+    resources :messages, only: [:create]
+  end 
 end
