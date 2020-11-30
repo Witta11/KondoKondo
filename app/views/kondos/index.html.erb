@@ -8,7 +8,7 @@
       <%#= render 'shared/grid-card', :kondo => kondo %>
 
     <% end %>
-        <div class="card-wrapper">
+    <div class="card-wrapper">
       <div class="random-card-product" id=<%="@kondo-index-#{@kondo.id}"%>>
         <% if @kondo.image.attached? %>
           <%= cl_image_tag @kondo.image.key, height: 400, width: 400, crop: :fill %>
@@ -47,10 +47,7 @@
               <%= link_to 'Contact Kondor', root_path, method: :get, class: 'btn btn-main btn-contact' %>
             </div>
           </div>
-
         </div>
-      <p>TEST</p>
-      <#%= render 'kondos/random', :kondo => @kondo %>
         </div>
     <div>
       <button class="random-button">Klick</button>
