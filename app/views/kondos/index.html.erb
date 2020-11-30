@@ -9,28 +9,34 @@
       <%#= render 'shared/grid-card', :kondo => kondo %>
 
     <% end %>
-    <div class="card-wrapper">
+        <div class="card-wrapper">
       <div class="random-card-product" id=<%="@kondo-index-#{@kondo.id}"%>>
         <% if @kondo.image.attached? %>
           <%= cl_image_tag @kondo.image.key, height: 400, width: 400, crop: :fill %>
         <% end %>
           <div class="random-card-product-infos">
-            <% if current_user %>
-              <% if !current_user.owner?(@kondo) %>
-                <% if current_user.favorite?(@kondo) %>
-                  <%= link_to favorite_path(Favorite.find_by(kondo: @kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
-                  <i class="fas fa-heart"></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post, remote: true do %>
-                  <i class="far fa-heart"></i>
+            <div id="fav-icon">
+              <div class="random-card-product-header">
+                <h2><%= @kondo.title %></h2>
+              </div>
+              <% if current_user %>
+                <% if !current_user.owner?(@kondo) %>
+                  <% if current_user.favorite?(@kondo) %>
+                    <%= link_to favorite_path(Favorite.find_by(kondo: @kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
+                    <i class="fas fa-heart"></i>
+                    <% end %>
+                  <% else %>
+                    <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post, remote: true do %>
+                    <i class="far fa-heart"></i>
+                    <% end %>
                   <% end %>
                 <% end %>
               <% end %>
-            <% end %>
-              <h2><%= @kondo.title %></h2>
-              <p><%= @kondo.description %></p>
-            <div class="random card-product-seller">
+            </div>
+              <div id="kondo-description">
+                <p><%= @kondo.description %></p>
+              </div>
+            <div class="random-card-product-seller">
               <div class="location">
                 <p><i class="fas fa-map-marker-alt"></i>
                 <strong>Location:</strong> <%= @kondo.location %></p>
@@ -42,7 +48,7 @@
         </div>
       <p>TEST</p>
       <#%= render 'kondos/random', :kondo => @kondo %>
-    </div>
+        </div>
     <div>
       <button class="random-button">Klick</button>
     </div>

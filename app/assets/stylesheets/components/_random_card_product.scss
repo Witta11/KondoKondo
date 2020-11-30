@@ -5,9 +5,14 @@
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
-    align-items: center;
     margin: 8px;
+    position: relative;
 
+  }
+
+  .random-card-product-header {
+    display: flex;
+    justify-content: space-between;
   }
 
   .random-card-product img {
@@ -19,13 +24,14 @@
   .random-card-product h2 {
     font-size: 26px;
     font-weight: bold;
-    margin-top: 25px;
+    color: $darkgrey;
   }
 
   .random-card-product p {
     font-size: 18px;
     line-height: 1.4;
-    margin: 25px 0;
+    margin-top: 20px;
+    color: $midgrey;
   }
 
   .random-card-product .random-card-product-infos {
@@ -35,7 +41,9 @@
   }
 
   .random-card-product-seller {
-    margin-top: 0px
+    margin-top: 0px;
+    position: absolute;
+    top: 250px;
   }
 
   .btn-contact {
@@ -54,3 +62,9 @@
         margin: 10px 0;
       }
   }
+
+#fav-icon {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
