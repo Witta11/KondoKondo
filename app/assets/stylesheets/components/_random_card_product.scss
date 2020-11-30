@@ -1,0 +1,56 @@
+.random-card-product {
+    overflow: hidden;
+    height: 400px;
+    width: 1000px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    margin: 8px;
+
+  }
+
+  .random-card-product img {
+    height: 100%;
+    width: 900px;
+    object-fit: cover;
+  }
+
+  .random-card-product h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 25px;
+  }
+
+  .random-card-product p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 25px 0;
+  }
+
+  .random-card-product .random-card-product-infos {
+    height: max-content;
+    width: 600px;
+    padding: 25px;
+  }
+
+  .random-card-product-seller {
+    margin-top: 0px
+  }
+
+  .btn-contact {
+    font-weight: bold;
+    width: 360px;
+    margin: 25px 0;
+
+  }
+
+  .location {
+    display: flex;
+    justify-content: space-between;
+    color: $grey;
+      p {
+        font-size: 14px;
+        margin: 10px 0;
+      }
+  }

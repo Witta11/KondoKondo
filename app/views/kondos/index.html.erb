@@ -1,13 +1,45 @@
 
-<div class="container mt-5">
-  <h5 style="font-weight: bold">Kondos nearby</h5>
-  <p style="font-size: 14px; color: white">Browse through the things other people in your neighborhood don't need anymore.</p>
+<div class="random-container">
+  <div>
+    <h5 style="font-weight: bold">Discover random Kondos nearby</h5>
+    <p style="font-size: 14px; color: white">Browse through the things other people in your neighborhood don't need anymore.</p>
+  </div>
   <div class="kondos-container">
     <% @kondos.each do |kondo| %>
       <%#= render 'shared/grid-card', :kondo => kondo %>
 
     <% end %>
     <div class="card-wrapper">
+      <div class="random-card-product" id=<%="@kondo-index-#{@kondo.id}"%>>
+        <% if @kondo.image.attached? %>
+          <%= cl_image_tag @kondo.image.key, height: 400, width: 400, crop: :fill %>
+        <% end %>
+          <div class="random-card-product-infos">
+            <% if current_user %>
+              <% if !current_user.owner?(@kondo) %>
+                <% if current_user.favorite?(@kondo) %>
+                  <%= link_to favorite_path(Favorite.find_by(kondo: @kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
+                  <i class="fas fa-heart"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post, remote: true do %>
+                  <i class="far fa-heart"></i>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+              <h2><%= @kondo.title %></h2>
+              <p><%= @kondo.description %></p>
+            <div class="random card-product-seller">
+              <div class="location">
+                <p><i class="fas fa-map-marker-alt"></i>
+                <strong>Location:</strong> <%= @kondo.location %></p>
+              </div>
+              <%= link_to 'Contact Kondor', root_path, method: :get, class: 'btn btn-main btn-contact' %>
+            </div>
+          </div>
+
+        </div>
       <p>TEST</p>
       <#%= render 'kondos/random', :kondo => @kondo %>
     </div>
