@@ -1,0 +1,57 @@
+.card-product-three {
+  overflow: hidden;
+  height: 180px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.card-product-three img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+}
+
+.d-flex {
+  justify-content: space-between;
+}
+
+.card-product-infos {
+  padding: 16px;
+  height: 180px;
+
+  .card-product-header-white {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+  }
+  .card-product-desc {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin: 12px 0;
+  }
+}
+
+.icons {
+  text-align: center;
+}
+
+.icons i {
+  padding-right: 16px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+  color: grey;
+}

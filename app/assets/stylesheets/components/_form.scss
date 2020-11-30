@@ -21,10 +21,48 @@
   border-left: none;
   border-right: none;
   color: $white;
+}
 
+#title-input:focus, #description-input:focus, #location-input:focus {
+  color: $white;
+  background-color: $kondopurple;
+  border-color: $kondopurple;
+  border-bottom-color: $white;
+  box-shadow: 0 0 0 0rem $white
 }
 
 #photo-preview {
   border-radius: 3px
 
+}
+
+.form-control.is-valid, .form-control.is-invalid  {
+  border-color: $white;
+}
+
+.invalid-feedback {
+  color: $white;
+
+}
+
+.image-border {
+  border-radius: 3px;
+  width: 50px;
+}
+
+.preview-image-container {
+  background-color: $light-gray;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: $mid-gray;
+  width: 280px;
+  height: 80px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+#photo-title {
+  margin-bottom: 0px;
+  color: lightgray;
 }

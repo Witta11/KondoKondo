@@ -21,6 +21,10 @@ class KondoPolicy < ApplicationPolicy
     true
   end
 
+  def active?
+    record.user == user
+  end
+
   def update?
     record.user == user
   end
@@ -28,5 +32,4 @@ class KondoPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
 end

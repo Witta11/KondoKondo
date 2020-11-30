@@ -1,0 +1,75 @@
+// DIV for MY FAVORITES
+.d-flex {
+  justify-content: space-between;
+}
+
+.card-product-two {
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    border-radius: 4px;
+  }
+
+  .card-product-two img {
+    height: 100%;
+    width: 200px;
+    object-fit: cover;
+  }
+
+  .card-product-two h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+    padding-right: 4px
+  }
+
+  .card-product-two p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .card-product-two .card-product-infos {
+    height: max-content;
+    padding: 16px;
+  }
+
+  .card-product-seller {
+    margin-top: 20px
+  }
+
+.fa-heart:before {
+  color: black;
+}
+
+.empty {
+  overflow: hidden;
+  height: 180px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(255,0,0,0) 0%, #D9E4F5 100%);;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.empty i {
+  color: white;
+  font-size: 50px;
+  margin: 45%;
+}
+
+.empty:hover {
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+}
+

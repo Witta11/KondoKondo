@@ -10,7 +10,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <% if params[:controller] == "kondos" && params[:action] == "new"%>
+<%- actions = %w(new edit update create) %>
+  <% if params[:controller] == "kondos" && actions.include?(params[:action]) %>
     <% background = "#AA6373" %>
   <% elsif params[:controller] == "dashboard" && params[:action] == "show"%>
     <% background = "#AA6373" %>

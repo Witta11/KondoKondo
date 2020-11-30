@@ -1,4 +1,3 @@
-
 <div class="random-container">
   <div>
     <h5 style="font-weight: bold">Discover random Kondos nearby</h5>
@@ -19,17 +18,21 @@
               <div class="random-card-product-header">
                 <h2><%= @kondo.title %></h2>
               </div>
-              <% if current_user %>
-                <% if !current_user.owner?(@kondo) %>
-                  <% if current_user.favorite?(@kondo) %>
-                    <%= link_to favorite_path(Favorite.find_by(kondo: @kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
-                    <i class="fas fa-heart"></i>
-                    <% end %>
-                  <% else %>
-                    <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post, remote: true do %>
-                    <i class="far fa-heart"></i>
-                    <% end %>
+              <% if current_user && !current_user.owner?(@kondo) %>
+                <% if current_user.favorite?(@kondo) %>
+                  <%= link_to favorite_path(Favorite.find_by(kondo: @kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
+                  <i class="fas fa-heart"></i>
                   <% end %>
+                <% else %>
+                  <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post, remote: true do %>
+                  <i class="far fa-heart"></i>
+                  <% end %>
+                <% end %>
+              <% elsif current_user && current_user.owner?(@kondo) %>
+                  <%# if user is logged in and is the owner she sees nothing %>
+              <% else %>
+                <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post do %>
+                  <i class="far fa-heart"></i>
                 <% end %>
               <% end %>
             </div>
