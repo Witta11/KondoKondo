@@ -128,7 +128,7 @@ puts "#{Kondo.count} created"
 file = URI.open("https://images.unsplash.com/reserve/oIpwxeeSPy1cnwYpqJ1w_Dufer%20Collateral%20test.jpg?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=916&q=80")
 kondo5 = Kondo.new(
   title: "Tools from 1940s",
-  description: "The elderly lady from the ground floor of our apartment building asked, if I knew someone who can use this set of tools. Her husband used them for his crafts.",
+  description: "The elderly lady from the ground floor of our apartment building asked, if I knew someone who can use this set of tools.",
   location: "Nostitzstraße 15, 10961 Berlin",
   latitude: 52.4914043,
   longitude: 13.3904046,
@@ -145,11 +145,11 @@ puts "#{Kondo.count} created"
 file = URI.open("https://images.unsplash.com/photo-1488654091480-0a2443430a4a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjJ8fHZpbnRhZ2V8ZW58MHx8MHw%3D&auto=format&fit=crop&w=600&q=60")
 kondo6 = Kondo.new(
   title: "Old tin Boxes",
-  description: "used those in my kitchen, don't use them anymore",
+  description: "used those in my kitchen, don't need them anymore",
   location: "Grunowstraße 11-21, 13187 Berlin",
-  latitude: ,
-  longitude: ,
-  user: ,
+  latitude: 52.5677108,
+  longitude: 13.409336,
+  user: Friddi,
   reserved: false,
   active: true
   )
@@ -164,8 +164,8 @@ kondo7 = Kondo.new(
   title: "Polaroid still working",
   description: "The Camera is still working but I don't find the rest to work",
   location: "Lotosweg 30-34, 13467 Berlin",
-  latitude: ,
-  longitude: ,
+  latitude: 52.6142558,
+  longitude: 13.3234351,
   user: Teddy,
   reserved: false,
   active: true
