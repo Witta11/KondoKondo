@@ -21,9 +21,8 @@ class KondosController < ApplicationController
   def create
     @kondo = Kondo.new(set_params)
     @kondo.user = current_user
-    @kondo.save
     if @kondo.save
-      redirect_to kondos_path(@kondo)
+      redirect_to kondos_path
     else
       render :new
     end
@@ -38,7 +37,7 @@ class KondosController < ApplicationController
   def update
     @kondo = Kondo.find(params[:id])
     if @kondo.update(set_params)
-      redirect_to kondos_path(@kondo)
+      redirect_to kondos_path
     else
       render :edit
     end
