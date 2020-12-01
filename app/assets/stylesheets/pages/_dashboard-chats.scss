@@ -1,0 +1,29 @@
+.chats {
+  display: flex;
+  background-color: white;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  height: 100px;
+  align-items: center;
+}
+
+.chats img {
+  height: 100%;
+  width: 20%;
+  object-fit: cover;
+  padding: 8px;
+  border-radius: 16px;
+}
+
+.chat-title {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+.chat-content {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+}
+
