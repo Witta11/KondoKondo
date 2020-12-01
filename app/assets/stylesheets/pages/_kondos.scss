@@ -15,7 +15,7 @@
 .kondos-container-grid {
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: 40px 105px;
 }
@@ -81,9 +81,12 @@
   transform-style: preserve-3d;
 }
 /* Do an horizontal flip when you move the mouse over the flip box container */
-// .flip-card:hover .flip-card-inner {
-//   transform: rotateX(180deg);
-// }
+
+.flip .flip-card-inner {
+  transform: rotateX(180deg);
+}
+
+
 /* Position the front and back side */
 .card-wrapper, .flip-card-back {
   position: absolute;

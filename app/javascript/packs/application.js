@@ -36,7 +36,7 @@ document.addEventListener('turbolinks:load', () => {
 
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { fetchRandomKondo } from '../components/random_kondo';
-import { flipKondoCard } from '../components/flip';
+import { flipKondo } from '../components/flip_kondo';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 document.addEventListener('turbolinks:load', () => {
@@ -44,7 +44,7 @@ document.addEventListener('turbolinks:load', () => {
  previewImageOnFileSelect();
  initAutocomplete();
  fetchRandomKondo();
- flipKondoCard();
+ flipKondo();
 
  document.getElementById("open").addEventListener("click", openNav);
  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
