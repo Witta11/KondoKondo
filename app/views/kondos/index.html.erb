@@ -1,5 +1,5 @@
 <div class="random-container">
-  <div>
+  <div class="random-header">
     <h5 style="font-weight: bold">Discover random Kondos nearby</h5>
     <p style="font-size: 14px; color: white">Browse through the things other people in your neighborhood don't need anymore.</p>
   </div>
@@ -8,6 +8,15 @@
       <%#= render 'shared/grid-card', :kondo => kondo %>
 
     <% end %>
+    <div class="random-icons-wrapper">
+      <div class="random-icons">
+        <i class="fas fa-redo-alt"></i>
+        <i class="fas fa-th-large"></i>
+      </div>
+      <div>
+        <i class="fas fa-redo-alt random-button"></i>
+      </div>
+    </div>
     <div class="card-wrapper">
       <div class="random-card-product" id=<%="@kondo-index-#{@kondo.id}"%>>
         <% if @kondo.image.attached? %>
@@ -49,8 +58,5 @@
           </div>
         </div>
         </div>
-    <div>
-      <button class="random-button">Klick</button>
-    </div>
   </div>
 </div>
