@@ -8,7 +8,7 @@
             <% if fav.kondo.image.attached? %>
               <%= cl_image_tag fav.kondo.image.key, height: 180, width: 100, crop: :fill %>
             <% end %>
-              <div class="card-product-infos">
+              <div class="card-product-infos-dash">
                 <div class="d-flex">
                   <h2><%= fav.kondo.title %></h2>
                   <%= link_to favorite_path(fav, redirect_to: "dashboard"), method: :delete do %>
@@ -16,10 +16,12 @@
                   <% end %>
                 </div>
                 <p><%= fav.kondo.description %></p>
-                <div class="card-product-seller">
+                <div class="card-product-seller-dash">
                   <p><strong>Pickup at:</strong> <%= fav.kondo.location %></p>
-                  <p><strong>Kondor:</strong> <%= fav.kondo.user.username %></p>
-                  <%#link_to 'Contact Kondor',  %>
+                  <%= form_tag chatrooms_path, method: :post do %>
+                    <%= hidden_field_tag :kondo_id, fav.kondo.id %>
+                    <%= submit_tag "Contact Kondor", class: "btn btn-main-grid btn-contact-grid-dash" %>
+                <% end %>
                 </div>
             </div>
           </div>
@@ -60,7 +62,7 @@
             <% if kondo.image.attached? %>
               <%= cl_image_tag kondo.image.key, height: 180, width: 100, crop: :fill %>
             <% end %>
-            <div class="card-product-infos">
+            <div class="card-product-infos-dash">
               <div class="d-flex">
                 <h2 class="card-product-header-white"><%= kondo.title %></h2>
                 <% if policy(kondo).destroy? %>
