@@ -31,13 +31,11 @@
   box-shadow: 0 0 0 0rem $white
 }
 
-#photo-preview {
-  border-radius: 3px
-
-}
 
 .form-control.is-valid, .form-control.is-invalid  {
   border-color: $white;
+  background-color: $kondopurple;
+  color: $white
 }
 
 .invalid-feedback {
@@ -45,24 +43,41 @@
 
 }
 
-.image-border {
-  border-radius: 3px;
-  width: 50px;
-}
-
 .preview-image-container {
-  background-color: $light-gray;
+  // background-color: $light-gray;
+  // opacity: 0.5;
   border-radius: 5px;
   border-width: 2px;
-  border-style: dashed;
-  border-color: $mid-gray;
+  border-style: solid;
+  border-color: $white;
   width: 280px;
   height: 80px;
-  padding-left: 15px;
-  padding-top: 15px;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin: 0px;
+
+
+}
+
+#photo-preview {
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.preview-image-dummy {
+  // background-color: $white;
+  // opacity: 0.7;
+  border-radius: 3px;
+  border-style: dashed;
+  border-color: $white;
+  width: 59px;
+  height: 59px;
+  border-width: 2px;
+  text-align: center;
+  color: $white;
 }
 
 #photo-title {
   margin-bottom: 0px;
-  color: lightgray;
+  color: $white;
 }

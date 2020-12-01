@@ -3,21 +3,20 @@
   <%= f.input :description, input_html: { class: "form-field", id: 'description-input'  }, label: false, placeholder: 'Give a short description of your Kondo' %>
   <%= f.input :location, input_html: { class: "form-field", id: 'location-input'  }, label: false, placeholder: 'Where can the Kondo be picked up?' %>
   <br>
+    <p id="photo-title">Kondo Image</p>
+      <div class="preview-image-container row">
+        <%= image_tag "", height: 60, class: "hidden", id: "photo-preview" %>
+        <div class="preview-image-dummy">
+                  <h2>+</h2>
+        </div>
+      </div>
+    <br>
 <div class="buttons-container">
   <div height="40">
     <%= f.input :image, input_html: { class: "d-none", id: 'photo-input' }, label_html: { class: 'btn-height btn btn-ghost'}, label: 'Upload a photo' %>
-    <br>
-    <p id="photo-title">Kondo Images</p>
-    <div class="preview-image-container">
-      <div class="image-border">
-        <%= image_tag "", width: 46, class: "hidden", id: "photo-preview" %>
-      </div>
-    </div>
   </div>
   <div height="40">
     <%= f.submit 'Submit', class: "btn btn-main"%>
   </div>
 </div>
 <% end %>
-
-

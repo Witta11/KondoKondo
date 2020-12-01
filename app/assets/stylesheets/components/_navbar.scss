@@ -5,6 +5,11 @@
   position: sticky;
 }
 
+#mySidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 // .kondo-link {
 //   font-size: 28px;
 //   color: white;
@@ -47,6 +52,17 @@
   color: #818181;
   display: block;
   transition: 0.3s;
+}
+
+.footer-links {
+  display: flex;
+  margin-left: 2px;
+}
+
+.footer-copyright a {
+  font-size: 14px;
+  padding: 4px 0;
+  margin-left: 30px;
 }
 
 /* When you mouse over the navigation links, change their color */

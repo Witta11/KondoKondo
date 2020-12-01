@@ -35,12 +35,17 @@ document.addEventListener('turbolinks:load', () => {
 
 
 import { previewImageOnFileSelect } from '../components/photo_preview';
-
+import { fetchRandomKondo } from '../components/random_kondo';
+import { flipKondoCard } from '../components/flip';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 document.addEventListener('turbolinks:load', () => {
+
  previewImageOnFileSelect();
  initAutocomplete();
+ fetchRandomKondo();
+ flipKondoCard();
+
  document.getElementById("open").addEventListener("click", openNav);
  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
  function openNav() {
@@ -60,5 +65,3 @@ document.addEventListener('turbolinks:load', () => {
     $('[data-toggle="tooltip"]').tooltip()
   })
 });
-
-
