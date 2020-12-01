@@ -17,6 +17,6 @@
 
   <%= simple_form_for [ @chatroom, @message ], remote: true, html: { class: "message-box"} do |f| %>
     <%= f.input :content, label: false, placeholder: "|", input_html: { class: "message-input" } %>
-    <button class="button-send" type="submit"><i class="fas fa-paper-plane"></i></button>
+    <button id="send" class="button-send" type="submit"><i class="fas fa-paper-plane"></i></button>
   <% end %>
 </div>
