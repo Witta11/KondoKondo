@@ -52,6 +52,15 @@
   margin-top: 3rem;
 }
 
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: $kondocyan;
+  }
+
+.nav-link {
+  color: white;
+}
 
 
 // CARD FLIP
