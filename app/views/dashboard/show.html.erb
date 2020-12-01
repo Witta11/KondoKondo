@@ -34,12 +34,20 @@
     <div class="dash-box">
       <div class="box-content">
         <h2>My Messages</h2>
-          <% current_user.chatrooms.each do |chatroom| %>
-            <p>
-              <%= link_to chatroom.kondo.title, chatroom_path(chatroom)%>
-            </p>
-          <% end %>
-
+        <% current_user.chatrooms.each do |chatroom| %>
+          <div class="card-product-two">
+            <% if chatroom.kondo.image.attached? %>
+              <%= cl_image_tag chatroom.kondo.image.key, height: 180, width: 100, crop: :fill %>
+            <% end %>
+            <div class="card-product-infos">
+                <h2><%= chatroom.kondo.title %></h2>
+                <p>Chat started: <%= chatroom.created_at.day %>.<%= chatroom.created_at.month %>.<%= chatroom.created_at.year %></p>
+                <p>Last message: <%= chatroom.messages.last.content %></p>
+                <%  %>
+                link_to chatroom_path(chatroom) <strong>Chat with <%= chatroom.kondo.user.username %></strong></p>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
 
