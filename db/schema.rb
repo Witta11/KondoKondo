@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_104542) do
+ActiveRecord::Schema.define(version: 2020_11_30_135059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 2020_11_25_104542) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "kondo_id", null: false
+    t.index ["kondo_id"], name: "index_chatrooms_on_kondo_id"
+    t.index ["user_id", "kondo_id"], name: "index_chatrooms_on_user_id_and_kondo_id", unique: true
+    t.index ["user_id"], name: "index_chatrooms_on_user_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "kondo_id", null: false
@@ -59,6 +70,16 @@ ActiveRecord::Schema.define(version: 2020_11_25_104542) do
     t.index ["user_id"], name: "index_kondos_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -75,7 +96,10 @@ ActiveRecord::Schema.define(version: 2020_11_25_104542) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatrooms", "kondos"
+  add_foreign_key "chatrooms", "users"
   add_foreign_key "favorites", "kondos"
   add_foreign_key "favorites", "users"
   add_foreign_key "kondos", "users"
+  add_foreign_key "messages", "users"
 end

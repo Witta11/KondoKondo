@@ -17,7 +17,7 @@ Kondo.destroy_all
 puts "Start seeding Users..."
 
 
-Friddi = User.create!(
+friddi = User.create!(
     username: "Friddi",
     first_name: "Friedrich",
     last_name: "Hegel",
@@ -25,7 +25,7 @@ Friddi = User.create!(
     password: "123456"
 )
 
-Kalle = User.create!(
+kalle = User.create!(
     username: "Kalle",
     first_name: "Karl",
     last_name: "Marx",
@@ -33,7 +33,7 @@ Kalle = User.create!(
     password: "123456"
 )
 
-Teddy = User.create!(
+teddy = User.create!(
     username: "Teddy",
     first_name: "Theodor",
     last_name: "Adorno",
@@ -41,11 +41,27 @@ Teddy = User.create!(
     password: "123456"
 )
 
-Fritzi = User.create!(
+fritzi = User.create!(
     username: "Fritzi",
     first_name: "Friedrich",
     last_name: "Nietzsche",
     email: "Friedrich.Nietzsche@gmail.com",
+    password: "123456"
+)
+
+herb = User.create!(
+    username: "herb",
+    first_name: "Herbert",
+    last_name: "Markuse",
+    email: "herbert.markuse@gmail.com",
+    password: "123456"
+)
+
+horki = User.create!(
+    username: "horki",
+    first_name: "Max",
+    last_name: "Horkheimer",
+    email: "max.horkheimer@gmail.com",
     password: "123456"
 )
 
@@ -63,7 +79,7 @@ kondo1 = Kondo.new(
   location: "Hagelberger Str. 11 10965 Berlin",
   latitude: 52.4918226,
   longitude: 13.3842672,
-  user: Friddi,
+  user: friddi,
   reserved: false,
   active: true
   )
@@ -81,7 +97,7 @@ kondo2 = Kondo.new(
   location: "Kreuzbergstraße 17a, 10965 Berlin",
   latitude: 52.4892546,
   longitude: 13.374921,
-  user: Fritzi,
+  user: fritzi,
   reserved: false,
   active: true
   )
@@ -99,7 +115,7 @@ kondo3 = Kondo.new(
   location: "Nostitzstraße 15, 10961 Berlin",
   latitude: 52.4914043,
   longitude: 13.3904046,
-  user: Fritzi,
+  user: fritzi,
   reserved: false,
   active: true
   )
@@ -115,7 +131,7 @@ kondo4 = Kondo.new(
   location: "Bergmannstraße 141, 10961 Berlin",
   latitude: 52.4890419,
   longitude: 13.3942448,
-  user: Kalle,
+  user: kalle,
   reserved: false,
   active: true
   )
@@ -132,7 +148,7 @@ kondo5 = Kondo.new(
   location: "Nostitzstraße 15, 10961 Berlin",
   latitude: 52.4914043,
   longitude: 13.3904046,
-  user: Fritzi,
+  user: fritzi,
   reserved: false,
   active: true
   )
@@ -149,7 +165,7 @@ kondo6 = Kondo.new(
   location: "Grunowstraße 11-21, 13187 Berlin",
   latitude: 52.5677108,
   longitude: 13.409336,
-  user: Friddi,
+  user: friddi,
   reserved: false,
   active: true
   )
@@ -166,7 +182,7 @@ kondo7 = Kondo.new(
   location: "Lotosweg 30-34, 13467 Berlin",
   latitude: 52.6142558,
   longitude: 13.3234351,
-  user: Teddy,
+  user: teddy,
   reserved: false,
   active: true
   )
@@ -174,6 +190,7 @@ kondo7.image.attach(io: file, filename: 'polaroid.png', content_type: 'image/png
 kondo7.save
 sleep(5)
 puts "#{Kondo.count} created"
+
 
 
 puts "End seeding Kondos, #{Kondo.count} created ..."
