@@ -5,18 +5,21 @@ class KondoPolicy < ApplicationPolicy
     end
   end
 
-    def index?
-      true
-    end
+  def index?
+    true
+  end
 
-    def create?
-      true
-    end
+  def create?
+    true
+  end
 
-    def reserve?
+  def reserve?
     record.user == user
-    end
+  end
 
+  def active?
+    record.user == user
+  end
 
   def update?
     record.user == user
@@ -25,5 +28,4 @@ class KondoPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
 end
