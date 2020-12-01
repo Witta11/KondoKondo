@@ -30,6 +30,27 @@
   margin: 16px;
   border-radius: 4px;
   padding: 32px;
+
+//   overflow: auto;
+// }
+
+// .kondo {
+//   padding: 16px;
+//   border-bottom: 1px solid grey;
+
+//   .kondo-title {
+//     font-size: 20px;
+//   }
+//   .kondo-desc {
+//     font-size: 12px;
+//   }
+//   .kondo-status {
+//     font-size: 12px;
+//     margin-bottom: 0;
+//     display: inline-block;
+//   }
+
   overflow-y: auto;
   background-color: #cea5ae;
+
 }
