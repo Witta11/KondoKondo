@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   post '/dashboard/kondo_update', to: 'kondos#reserve'
 
+
   resources :chatrooms, only: [:show, :create] do
+
     resources :messages, only: [:create]
   end
 
