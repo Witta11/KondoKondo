@@ -60,7 +60,10 @@
                     <p><i class="fas fa-map-marker-alt"></i>
                     <strong>Location:</strong> <%= @kondo.location %></p>
                   </div>
-                  <%= link_to 'Contact Kondor', root_path, method: :get, class: 'btn btn-main btn-contact' %>
+                  <%= form_tag chatrooms_path, method: :post do %>
+                    <%= hidden_field_tag :kondo_id, @kondo.id %>
+                    <%= submit_tag "Contact Kondor", class: 'btn btn-main btn-contact' %>
+                <% end %>
                 </div>
               </div>
             </div>
@@ -112,7 +115,10 @@
                   <p><i class="fas fa-map-marker-alt"></i>
                   <strong>Location:</strong> <%= kondo.location %></p>
                 </div>
-                <%= link_to 'Contact Kondor', root_path, method: :get, class: 'btn btn-main-grid btn-contact-grid' %>
+                <%= form_tag chatrooms_path, method: :post do %>
+                  <%= hidden_field_tag :kondo_id, kondo.id %>
+                  <%= submit_tag "Contact Kondor", class: "btn btn-main-grid btn-contact-grid" %>
+                <% end %>
               </div>
             </div>
           </div>
