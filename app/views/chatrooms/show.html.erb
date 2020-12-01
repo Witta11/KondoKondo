@@ -1,21 +1,22 @@
+<div class="chat-container">
+  <h1>Chat about: <%= @chatroom.kondo.title %></h1>
+  <p class="subheader-chat">This Chat is between You and <%= @chatroom.kondo.user.username %></p class="subheader-chat">
+<!--   <h1>#<%= @chatroom.user.username %></h1>
+  <h1>#<%= @chatroom.kondo.user.username %></h1> -->
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-container <%= @chatroom.user.username == message.user.username ? 'interested' : 'kondor' %>" id="message-<%= message.id %>">
+        <i class="author">
+          <span><%= message.user.username %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p class="message-content"><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
 
-
-<h1>#<%= @chatroom.user.username %></h1>
-<h1>#<%= @chatroom.kondo.title %></h1>
-<h1>#<%= @chatroom.kondo.user.username %></h1> 
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <i class="author">
-        <span><%= message.user.username %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= message.content %></p>
-    </div>
+  <%= simple_form_for [ @chatroom, @message ], remote: true, html: { class: "message-box"} do |f| %>
+    <%= f.input :content, label: false, placeholder: "|", input_html: { class: "message-input" } %>
+    <button class="button-send" type="submit"><i class="fas fa-paper-plane"></i></button>
   <% end %>
 </div>
-
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-  <%= f.button :submit, "send"%>
-<% end %>
