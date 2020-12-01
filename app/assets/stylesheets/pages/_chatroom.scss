@@ -1,0 +1,84 @@
+.chat-container {
+  padding: 0 250px;
+}
+
+.chat-container h1 {
+  color: white;
+  text-align: center;
+}
+
+.subheader-chat {
+  color: white;
+  text-align: center;
+}
+
+.message-box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px auto;
+  width: 50%;
+}
+
+.message-input {
+  width: 500px;
+  padding: 16px;
+  border-radius: 16px;
+  margin-top: 16px;
+  margin-right: 20px;
+}
+
+.interested {
+  background: #f9d198;
+  text-align: right;
+  width: 50%;
+  margin-left: auto;
+  overflow-wrap: break-word;
+  padding: 12px;
+  border-radius: 16px;
+  margin-bottom: 8px;
+}
+
+.kondor {
+  background: #fef5e8;
+  text-align: left;
+  width: 50%;
+  margin-right: auto;
+  overflow-wrap: break-word;
+  padding: 12px;
+  border-radius: 16px;
+  margin-bottom: 8px;
+}
+
+
+.message-content {
+  margin-bottom: 0;
+}
+
+button {
+  background-color: transparent;
+}
+
+.button-send {
+    background: #2DC8C8;
+    display: inline-block;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 50%;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button:focus {
+  box-shadow: none !important;
+  outline: 0 !important;
+}
