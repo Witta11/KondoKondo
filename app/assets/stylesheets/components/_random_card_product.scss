@@ -7,7 +7,8 @@
     display: flex;
     margin: 8px;
     position: relative;
-
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden !important;
   }
 
   .random-card-product-header {

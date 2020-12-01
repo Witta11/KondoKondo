@@ -17,46 +17,59 @@
         <i class="fas fa-redo-alt random-button"></i>
       </div>
     </div>
-    <div class="card-wrapper">
-      <div class="random-card-product" %>>
-        <% if @kondo.image.attached? %>
-          <%= cl_image_tag @kondo.image.key, height: 400, width: 400, crop: :fill %>
-        <% end %>
-          <div class="random-card-product-infos">
-            <div id="fav-icon">
-              <div class="random-card-product-header">
-                <h2><%= @kondo.title %></h2>
-              </div>
-              <% if current_user && !current_user.owner?(@kondo) %>
-                <% if current_user.favorite?(@kondo) %>
-                  <%= link_to favorite_path(Favorite.find_by(kondo: @kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
-                  <i class="fas fa-heart"></i>
+
+    <div class='flip-card'>
+      <div class='flip-card-inner'>
+
+        <div class="card-wrapper">
+
+          <div class="random-card-product" %>
+            <% if @kondo.image.attached? %>
+              <%= cl_image_tag @kondo.image.key, height: 400, width: 400, crop: :fill %>
+            <% end %>
+              <div class="random-card-product-infos">
+                <div id="fav-icon">
+                  <div class="random-card-product-header">
+                    <h2><%= @kondo.title %></h2>
+                  </div>
+                  <% if current_user && !current_user.owner?(@kondo) %>
+                    <% if current_user.favorite?(@kondo) %>
+                      <%= link_to favorite_path(Favorite.find_by(kondo: @kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
+                      <i class="fas fa-heart"></i>
+                      <% end %>
+                    <% else %>
+                      <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post, remote: true do %>
+                      <i class="far fa-heart"></i>
+                      <% end %>
+                    <% end %>
+                  <% elsif current_user && current_user.owner?(@kondo) %>
+                      <%# if user is logged in and is the owner she sees nothing %>
+                  <% else %>
+                    <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post do %>
+                      <i class="far fa-heart"></i>
+                    <% end %>
                   <% end %>
-                <% else %>
-                  <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post, remote: true do %>
-                  <i class="far fa-heart"></i>
-                  <% end %>
-                <% end %>
-              <% elsif current_user && current_user.owner?(@kondo) %>
-                  <%# if user is logged in and is the owner she sees nothing %>
-              <% else %>
-                <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post do %>
-                  <i class="far fa-heart"></i>
-                <% end %>
-              <% end %>
-            </div>
-              <div id="kondo-description">
-                <p><%= @kondo.description %></p>
+                </div>
+                  <div id="kondo-description">
+                    <p><%= @kondo.description %></p>
+                  </div>
+                <div class="random-card-product-seller">
+                  <div class="location">
+                    <p><i class="fas fa-map-marker-alt"></i>
+                    <strong>Location:</strong> <%= @kondo.location %></p>
+                  </div>
+                  <%= link_to 'Contact Kondor', root_path, method: :get, class: 'btn btn-main btn-contact' %>
+                </div>
               </div>
-            <div class="random-card-product-seller">
-              <div class="location">
-                <p><i class="fas fa-map-marker-alt"></i>
-                <strong>Location:</strong> <%= @kondo.location %></p>
-              </div>
-              <%= link_to 'Contact Kondor', root_path, method: :get, class: 'btn btn-main btn-contact' %>
             </div>
           </div>
+
+        <div class='flip-card-back'>
+          back
         </div>
-        </div>
+
+      </div>
+    </div>
+
   </div>
 </div>
