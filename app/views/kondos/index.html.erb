@@ -9,7 +9,7 @@
 
     <% end %>
     <div class="card-wrapper">
-      <div class="random-card-product" id=<%="@kondo-index-#{@kondo.id}"%>>
+      <div class="random-card-product" %>>
         <% if @kondo.image.attached? %>
           <%= cl_image_tag @kondo.image.key, height: 400, width: 400, crop: :fill %>
         <% end %>

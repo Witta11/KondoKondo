@@ -74,13 +74,12 @@ puts "Start seeding Kondos..."
 
 file = URI.open("https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8dmludGFnZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=600&q=60")
 kondo1 = Kondo.new(
-
   title: "My first Demo tape from 1995",
   description: "I originally recorded it when I was still a teenager and made it a Kondo so that you can have maximum joy of Rap vibes from the past!",
   location: "Hagelberger Str. 11 10965 Berlin",
   latitude: 52.4918226,
   longitude: 13.3842672,
-  user: Friddi,
+  user: friddi,
   reserved: false,
   active: true
   )
@@ -98,7 +97,7 @@ kondo2 = Kondo.new(
   location: "Kreuzbergstraße 17a, 10965 Berlin",
   latitude: 52.4892546,
   longitude: 13.374921,
-  user: Fritzi,
+  user: fritzi,
   reserved: false,
   active: true
   )
@@ -116,7 +115,7 @@ kondo3 = Kondo.new(
   location: "Nostitzstraße 15, 10961 Berlin",
   latitude: 52.4914043,
   longitude: 13.3904046,
-  user: Fritzi,
+  user: fritzi,
   reserved: false,
   active: true
   )
@@ -132,7 +131,7 @@ kondo4 = Kondo.new(
   location: "Bergmannstraße 141, 10961 Berlin",
   latitude: 52.4890419,
   longitude: 13.3942448,
-  user: Kalle,
+  user: kalle,
   reserved: false,
   active: true
   )
@@ -149,7 +148,7 @@ kondo5 = Kondo.new(
   location: "Nostitzstraße 15, 10961 Berlin",
   latitude: 52.4914043,
   longitude: 13.3904046,
-  user: Fritzi,
+  user: fritzi,
   reserved: false,
   active: true
   )
@@ -166,7 +165,7 @@ kondo6 = Kondo.new(
   location: "Grunowstraße 11-21, 13187 Berlin",
   latitude: 52.5677108,
   longitude: 13.409336,
-  user: Friddi,
+  user: friddi,
   reserved: false,
   active: true
   )
@@ -183,7 +182,7 @@ kondo7 = Kondo.new(
   location: "Lotosweg 30-34, 13467 Berlin",
   latitude: 52.6142558,
   longitude: 13.3234351,
-  user: Teddy,
+  user: teddy,
   reserved: false,
   active: true
   )
@@ -191,7 +190,7 @@ kondo7.image.attach(io: file, filename: 'polaroid.png', content_type: 'image/png
 kondo7.save
 sleep(5)
 puts "#{Kondo.count} created"
->>>>>>> master
+
 
 
 puts "End seeding Kondos, #{Kondo.count} created ..."
