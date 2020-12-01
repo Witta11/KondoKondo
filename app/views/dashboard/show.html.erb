@@ -30,11 +30,20 @@
         </div>
         <% end %>
       </div>
-          <div class="dash-box">
+
+    <div class="dash-box">
       <div class="box-content">
-      <h2>My Messages</h2>
+        <h2>My Messages</h2>
+          <% current_user.chatrooms.each do |chatroom| %>
+            <p>
+              <%= link_to chatroom.kondo.title, chatroom_path(chatroom)%>
+            </p>
+          <% end %>
+
       </div>
     </div>
+
+
     <div class="dash-box">
       <div class="box-content">
         <h2>My Kondos</h2>
