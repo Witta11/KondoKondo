@@ -44,3 +44,35 @@
   opacity: 0.6;
   color: $white;
 }
+
+.btn-contact {
+  font-weight: bold;
+  width: 360px;
+  margin: 25px 0;
+
+}
+
+.btn-main-grid {
+  color: $white;
+  background-color: $kondocyan;
+  border: 1px solid $kondocyan;
+  padding: 4px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-main-grid:hover {
+  opacity: 0.6;
+  color: $white;
+}
+
+.btn-contact-grid {
+  font-weight: regular;
+  width: 260px;
+  margin: 5px 0;
+
+}

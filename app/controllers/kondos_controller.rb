@@ -7,7 +7,11 @@ class KondosController < ApplicationController
     else
       @kondos = policy_scope(Kondo).order(created_at: :desc).where(active: true)
     end
-    @kondo = @kondos.sample
+    if params[:kondo_id].present?
+      @kondo = Kondo.find(params[:kondo_id])
+    else
+      @kondo = @kondos.sample
+    end
   end
 
   def random
