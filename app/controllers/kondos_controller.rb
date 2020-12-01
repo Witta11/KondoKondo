@@ -12,6 +12,15 @@ class KondosController < ApplicationController
     else
       @kondo = @kondos.sample
     end
+
+    @markers = [
+      {
+        lat: @kondo.latitude,
+        lng: @kondo.longitude,
+        infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
+      }
+    ]
+
   end
 
   def random
@@ -22,6 +31,14 @@ class KondosController < ApplicationController
     end
     @kondo = @kondos.sample
     render layout: false
+
+    @markers = [
+      {
+        lat: @kondo.latitude,
+        lng: @kondo.longitude,
+        infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
+      }
+    ]
     authorize @kondo
   end
 

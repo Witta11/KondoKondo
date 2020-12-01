@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Internal imports, e.g:
 import { initChatroomCable } from '../channels/chatroom_channel';
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { fetchRandomKondo } from '../components/random_kondo';
 import { flipKondo } from '../components/flip_kondo';
+import { initMapbox } from '../plugins/init_mapbox';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 document.addEventListener('turbolinks:load', () => {
@@ -45,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
  initAutocomplete();
  fetchRandomKondo();
  flipKondo();
+ initMapbox();
 
  document.getElementById("open").addEventListener("click", openNav);
  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */

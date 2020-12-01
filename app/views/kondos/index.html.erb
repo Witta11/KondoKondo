@@ -57,8 +57,7 @@
                   </div>
                 <div class="random-card-product-seller">
                   <div class="location">
-                    <p><i class="fas fa-map-marker-alt location-button"></i>
-                    <strong>Location:</strong> <%= @kondo.location %></p>
+                    <p><i class="fas fa-map-marker-alt location-button"></i> <strong>See location</strong></p>
                   </div>
                   <%= link_to 'Contact Kondor', root_path, method: :get, class: 'btn btn-main btn-contact' %>
                 </div>
@@ -66,7 +65,13 @@
             </div>
 
           </div>
-            <div class="flip-card-back"></div>
+            <div class="flip-card-back">
+              <div id="map"
+                  style="width: 100%; height: 100%"
+                  data-markers="<%= @markers.to_json %>"
+                  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -84,7 +89,7 @@
               <h2><%= kondo.title %></h2>
                 <% if current_user && !current_user.owner?(kondo) %>
                   <% if current_user.favorite?(kondo) %>
-                    <%= link_to favorite_path(Favorite.find_by(kondo: kondo), :location => params[:location], :kondo_id => kondo.id), method: :delete, remote: true do %>
+                    <%= link_to favorite_path(Favorite.find_by(kondo: kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
                     <i class="fas fa-heart"></i>
                     <% end %>
                   <% else %>

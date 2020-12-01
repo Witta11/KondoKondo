@@ -1,4 +1,4 @@
-<div class="random-card-product" id=<%="@kondo-index-#{@kondo.id}"%>>
+<div class="random-card-product"%>
   <% if @kondo.image.attached? %>
     <%= cl_image_tag @kondo.image.key, height: 400, width: 400, crop: :fill %>
   <% end %>
@@ -30,8 +30,7 @@
         </div>
       <div class="random-card-product-seller">
         <div class="location">
-          <p><i class="fas fa-map-marker-alt"></i>
-          <strong>Location:</strong> <%= @kondo.location %></p>
+          <p><i class="fas fa-map-marker-alt location-button"></i> <strong>See location</strong></p>
         </div>
         <%= link_to 'Contact Kondor', root_path, method: :get, class: 'btn btn-main btn-contact' %>
       </div>
