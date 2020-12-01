@@ -3,12 +3,9 @@
   <%= f.input :description, input_html: { class: "form-field", id: 'description-input'  }, label: false, placeholder: 'Give a short description of your Kondo' %>
   <%= f.input :location, input_html: { class: "form-field", id: 'location-input'  }, label: false, placeholder: 'Where can the Kondo be picked up?' %>
   <br>
-    <p id="photo-title">Kondo Image</p>
-      <div class="preview-image-container row">
-        <%= image_tag "", height: 60, class: "hidden", id: "photo-preview" %>
-        <div class="preview-image-dummy">
-                  <h2>+</h2>
-        </div>
+    <p class="d-none" id="photo-title">Kondo Image</p>
+      <div class="preview-image-container d-none row justify-content-center" id="photo-container">
+        <%= image_tag "", height: 100, class: "hidden", id: "photo-preview" %>
       </div>
     <br>
 <div class="buttons-container">

@@ -1,10 +1,10 @@
 <div class="main-container mt-5">
   <div class="row justify-content-center" style="margin-top: 150px">
-      <!-- This div is centered and takes 6 columns -->
+  <% unless params[:location].present? %>
     <div class="search-bar col-12 col-lg-6">
       <div>
         <h5 class="search-header" style="font-weight: bold">Type in your location ...</h5>
-        <%= form_tag split_path, class: "search-container", method: :get do %>
+        <%= form_tag root_path, class: "search-container", method: :get do %>
            <%= text_field_tag :location,
                params[:location],
                placeholder: "\xa0Search your hood...", class: "form-control search"
@@ -15,7 +15,31 @@
          <% end %>
       </div>
     </div>
-</div>
+  <% end %>
+  <% if params[:location].present? %>
+    <h5 style="font-weight: bold; text-align: center">What do you want to do?</h5>
+  </div>
+  <div class="split-container">
+    <div class="option-container">
+      <div>
+        <%= link_to image_tag('rocket.svg', :class=>"split-icon"), new_kondo_path(:location => @location) %>
+      </div>
+      <div class="subtext-container">
+        <p>Kondonate stuff</p>
+      </div>
+    </div>
+    <div class="option-container">
+      <div>
+        <%= link_to image_tag('map.svg', :class=>"split-icon"), kondos_path(:location => @location) %>
+      </div>
+      <div class="subtext-container">
+        <p>Find Kondos nearby</p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  </div>
   <div class="row info-blocks">
     <div class="block col-12 col-lg-4">
       <h2>Find old treasures</h2>

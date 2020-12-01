@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :kondos, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :chatrooms, dependent: :destroy
 
   validates :username, presence: false, uniqueness: true
   validates :first_name, presence: false
