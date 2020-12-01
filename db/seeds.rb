@@ -296,7 +296,7 @@ puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
 
 file = URI.open("https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80")
 kondo14 = Kondo.new(
-  title: "Fully functioning slide projector",
+  title: "Functioning slide projector",
   description: "For those who still own some slides from the past.",
   location: "Leonhardtstraße 6, 14057 Berlin, Germany",
   latitude: 52.50513908636079,
