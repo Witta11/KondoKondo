@@ -49,6 +49,22 @@ fritzi = User.create!(
     password: "123456"
 )
 
+herb = User.create!(
+    username: "herb",
+    first_name: "Herbert",
+    last_name: "Markuse",
+    email: "herbert.markuse@gmail.com",
+    password: "123456"
+)
+
+horki = User.create!(
+    username: "horki",
+    first_name: "Max",
+    last_name: "Horkheimer",
+    email: "max.horkheimer@gmail.com",
+    password: "123456"
+)
+
 puts "End seeding Users, #{User.count} created ..."
 
 puts " "
@@ -310,7 +326,6 @@ kondo15.image.attach(io: file, filename: 'camera.png', content_type: 'image/png'
 kondo15.save
 sleep(5)
 puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
-
 
 file = URI.open("https://images.unsplash.com/photo-1461360422312-048b738a1830?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80")
 kondo16 = Kondo.new(
