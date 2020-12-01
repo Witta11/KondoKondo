@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :split]
+  skip_before_action :authenticate_user!, only: [:home]
 
-  def split
+  def home
     @location = params[:location]
   end
 end

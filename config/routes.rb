@@ -13,14 +13,16 @@ Rails.application.routes.draw do
 
   resources :favorites, only: [:destroy]
 
-  get '/split', to: 'pages#split'
+  # get '/split', to: 'pages#split'
 
 
   post '/dashboard/kondo_update', to: 'kondos#reserve'
 
-  resources :chatrooms, only: [:show, :create, :index] do 
+
+  resources :chatrooms, only: [:show, :create] do
+
     resources :messages, only: [:create]
-  end 
+  end
 
   get '/dashboard/kondo_reserve', to: 'kondos#reserve'
   get '/dashboard/kondo_active', to: 'kondos#active'
