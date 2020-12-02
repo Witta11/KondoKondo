@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   get '/dashboard/kondo_reserve', to: 'kondos#reserve'
   get '/dashboard/kondo_active', to: 'kondos#active'
 
+  mount ActionCable.server => "/cable"
 end
