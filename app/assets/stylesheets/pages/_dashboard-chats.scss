@@ -15,15 +15,23 @@
   border-radius: 16px;
 }
 
+.chat-buddy {
+  margin-bottom: 0;
+  padding-left: 8px;
+}
+
 .chat-title {
   font-size: 16px;
   margin-bottom: 0;
+  opacity: .7;
+  padding-left: 8px;
 }
 .chat-content {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: .4;
   margin-bottom: 0;
+  padding-left: 8px;
 }
 
