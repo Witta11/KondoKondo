@@ -5,7 +5,6 @@ class ChatroomsController < ApplicationController
     @message = Message.new
     # authorize @chatroom
     authorize @message
-    # raise
   end
 
 
