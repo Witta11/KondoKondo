@@ -5,14 +5,14 @@
   </div>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item">
-        <a class="nav-link active" id="pills-shuffle-tab" data-toggle="pill" href="#pills-shuffle" role="tab" aria-controls="pills-shuffle" aria-selected="true"><i class="fas fa-redo-alt"></i></a>
+        <a class="nav-link <%= "active" if !params[:all] %>" id="pills-shuffle-tab" data-toggle="pill" href="#pills-shuffle" role="tab" aria-controls="pills-shuffle" aria-selected="true"><i class="fas fa-redo-alt"></i></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="false"><i class="fas fa-th-large"></i></a>
+      <a class="nav-link <%= "active" if params[:all] %>" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="false"><i class="fas fa-th-large"></i></a>
     </li>
   </ul>
   <div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-shuffle" role="tabpanel" aria-labelledby="pills-shuffle-tab">
+  <div class="tab-pane fade <%= "show active" if !params[:all] %>" id="pills-shuffle" role="tabpanel" aria-labelledby="pills-shuffle-tab">
       <div class="kondos-container">
         <div class="random-icons-wrapper">
           <div class="random-icons">
@@ -21,51 +21,55 @@
             <i class="fas fa-random random-button"></i>
           </div>
         </div>
-        <div class='flip-card'>
-          <div class='flip-card-inner'>
+        <% if !@kondo %>
+          <h2 style="color: white">We are sorry! There are no Kondos in your area.</h2>
+        <% end %>
+        <% if @kondo %>
+          <div class='flip-card'>
+            <div class='flip-card-inner'>
 
-            <div class="card-wrapper">
-            <div class="random-card-product">
-              <% if @kondo.image.attached? %>
-                <%= cl_image_tag @kondo.image.key, height: 400, width: 400, crop: :fill %>
-              <% end %>
-              <div class="random-card-product-infos">
-                <div id="fav-icon">
-                  <div class="random-card-product-header">
-                    <h2><%= @kondo.title %></h2>
-                  </div>
-                  <% if current_user && !current_user.owner?(@kondo) %>
-                    <% if current_user.favorite?(@kondo) %>
-                      <%= link_to favorite_path(Favorite.find_by(kondo: @kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
-                      <i class="fas fa-heart"></i>
-                      <% end %>
-                    <% else %>
-                      <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post, remote: true do %>
-                      <i class="far fa-heart"></i>
-                      <% end %>
-                    <% end %>
-                  <% elsif current_user && current_user.owner?(@kondo) %>
-                      <%# if user is logged in and is the owner she sees nothing %>
-                  <% else %>
-                    <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post do %>
-                      <i class="far fa-heart"></i>
-                    <% end %>
-                  <% end %>
-                </div>
-                  <div id="kondo-description">
-                    <p><%= @kondo.description %></p>
-                  </div>
-                <div class="random-card-product-seller">
-                  <div class="location">
-                    <p id="maplink-target"><i class="fas fa-map-marker-alt location-button"></i>  See location</p>
-                  </div>
-                  <%= form_tag chatrooms_path, method: :post do %>
-                    <%= hidden_field_tag :kondo_id, @kondo.id %>
-                    <%= submit_tag "Contact Kondor", class: 'btn btn-main btn-contact' %>
+              <div class="card-wrapper">
+              <div class="random-card-product">
+                <% if @kondo.image.attached? %>
+                  <%= cl_image_tag @kondo.image.key, height: 400, width: 400, crop: :fill %>
                 <% end %>
+                <div class="random-card-product-infos">
+                  <div id="fav-icon">
+                    <div class="random-card-product-header">
+                      <h2><%= @kondo.title %></h2>
+                    </div>
+                    <% if current_user && !current_user.owner?(@kondo) %>
+                      <% if current_user.favorite?(@kondo) %>
+                        <%= link_to favorite_path(Favorite.find_by(kondo: @kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
+                        <i class="fas fa-heart"></i>
+                        <% end %>
+                      <% else %>
+                        <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post, remote: true do %>
+                        <i class="far fa-heart"></i>
+                        <% end %>
+                      <% end %>
+                    <% elsif current_user && current_user.owner?(@kondo) %>
+                        <%# if user is logged in and is the owner she sees nothing %>
+                    <% else %>
+                      <%= link_to kondo_favorites_path(@kondo, :location => params[:location]), method: :post do %>
+                        <i class="far fa-heart"></i>
+                      <% end %>
+                    <% end %>
+                  </div>
+                    <div id="kondo-description">
+                      <p><%= @kondo.description %></p>
+                    </div>
+                  <div class="random-card-product-seller">
+                    <div class="location">
+                      <p id="maplink-target"><i class="fas fa-map-marker-alt location-button"></i>  See location</p>
+                    </div>
+                    <%= form_tag chatrooms_path, method: :post do %>
+                      <%= hidden_field_tag :kondo_id, @kondo.id %>
+                      <%= submit_tag "Contact Kondor", class: 'btn btn-main btn-contact' %>
+                  <% end %>
+                  </div>
                 </div>
               </div>
-            </div>
 
           </div>
             <div class="flip-card-back">
@@ -77,11 +81,11 @@
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
 
-    <div class="tab-pane fade" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+    <div class="tab-pane fade <%= "show active" if params[:all] %>" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
       <div class="kondos-container-grid">
         <% @kondos.each do |kondo| %>
         <div class="card-product">
@@ -93,11 +97,11 @@
               <h2><%= kondo.title %></h2>
                 <% if current_user && !current_user.owner?(kondo) %>
                   <% if current_user.favorite?(kondo) %>
-                    <%= link_to favorite_path(Favorite.find_by(kondo: kondo), :location => params[:location], :kondo_id => @kondo.id), method: :delete, remote: true do %>
+                    <%= link_to favorite_path(Favorite.find_by(kondo: kondo), :location => params[:location], :kondo_id => @kondo.id, :all => true), method: :delete, remote: true do %>
                     <i class="fas fa-heart"></i>
                     <% end %>
                   <% else %>
-                    <%= link_to kondo_favorites_path(kondo, :location => params[:location]), method: :post, remote: true do %>
+                    <%= link_to kondo_favorites_path(kondo, :location => params[:location], :all => true), method: :post, remote: true do %>
                     <i class="far fa-heart"></i>
                     <% end %>
                   <% end %>
@@ -111,16 +115,14 @@
               </div>
               <p><%= kondo.description %></p>
             <div class="card-product-seller">
-              <!-- <p><strong>Kondor:</strong> <%= kondo.user.username %></p>
-              <p><strong>Pickup at:</strong>
-
-              <br>
-              <%= kondo.location %></p> -->
               <div class="card-product-seller">
                 <div class="location-grid">
                   <p><i class="fas fa-map-marker-alt"></i>
                   <strong>Location:</strong> <%= kondo.location %></p>
                 </div>
+              <% if kondo.reserved %>
+                  <p>This Kondo is reserved already.</p>
+              <% end %>
                 <%= form_tag chatrooms_path, method: :post do %>
                   <%= hidden_field_tag :kondo_id, kondo.id %>
                   <%= submit_tag "Contact Kondor", class: "btn btn-main-grid btn-contact-grid" %>
