@@ -50,8 +50,9 @@
               <%= cl_image_tag chatroom.kondo.image.key, height: 180, width: 100, crop: :fill %>
             <% end %>
             <div>
+              <p class="chat-buddy"><%= chatroom.kondo.user.username %> </p>
               <p class="chat-title"><%= chatroom.kondo.title %></p>
-              <p class="chat-content">Chat started: <%= chatroom.created_at.day %>.<%= chatroom.created_at.month %>.<%= chatroom.created_at.year %></p>
+              <p class="chat-content">Last message: <%= chatroom.updated_at.day %>.<%= chatroom.updated_at.month %>.<%= chatroom.updated_at.year %></p>
             </div>
           </div>
           <% end %>
