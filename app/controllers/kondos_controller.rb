@@ -38,7 +38,7 @@ class KondosController < ApplicationController
     @kondo = Kondo.new(set_params)
     @kondo.user = current_user
     if @kondo.save
-      redirect_to kondos_path
+      redirect_to root_path
     else
       render :new
     end
@@ -82,7 +82,7 @@ class KondosController < ApplicationController
     @kondo.user = current_user
     authorize @kondo
     @kondo.delete
-    redirect_to kondos_path # redirect has to change to dashboard_path in upcoming version
+    redirect_to dashboard_path
   end
 
   private
