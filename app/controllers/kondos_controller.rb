@@ -3,7 +3,7 @@ class KondosController < ApplicationController
 
   def index
     if params[:location].present?
-      @kondos = policy_scope(Kondo).near(params[:location], 5, units: :km).order(created_at: :desc).where(active: true)
+      @kondos = policy_scope(Kondo).near(params[:location], 200, units: :km).order(created_at: :desc).where(active: true)
     else
       @kondos = policy_scope(Kondo).order(created_at: :desc).where(active: true)
     end
@@ -57,7 +57,7 @@ class KondosController < ApplicationController
     @kondo = Kondo.new(set_params)
     @kondo.user = current_user
     if @kondo.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -72,7 +72,7 @@ class KondosController < ApplicationController
   def update
     @kondo = Kondo.find(params[:id])
     if @kondo.update(set_params)
-      redirect_to kondos_path
+      redirect_to dashboard_path
     else
       render :edit
     end
