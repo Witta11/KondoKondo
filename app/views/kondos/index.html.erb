@@ -115,16 +115,14 @@
               </div>
               <p><%= kondo.description %></p>
             <div class="card-product-seller">
-              <!-- <p><strong>Kondor:</strong> <%= kondo.user.username %></p>
-              <p><strong>Pickup at:</strong>
-
-              <br>
-              <%= kondo.location %></p> -->
               <div class="card-product-seller">
                 <div class="location-grid">
                   <p><i class="fas fa-map-marker-alt"></i>
                   <strong>Location:</strong> <%= kondo.location %></p>
                 </div>
+              <% if kondo.reserved %>
+                  <p>This Kondo is reserved already.</p>
+              <% end %>
                 <%= form_tag chatrooms_path, method: :post do %>
                   <%= hidden_field_tag :kondo_id, kondo.id %>
                   <%= submit_tag "Contact Kondor", class: "btn btn-main-grid btn-contact-grid" %>
