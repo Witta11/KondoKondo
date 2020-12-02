@@ -122,3 +122,13 @@
 .fa-heart:before {
   padding-left: 8px;
 }
+
+.map-close {
+  position: absolute;
+  left: 930px;
+  top: 25px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

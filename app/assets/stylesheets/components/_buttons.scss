@@ -76,8 +76,33 @@
   margin: 5px 0;
 }
 
+.btn-contact-grid:hover {
+  opacity: 0.6;
+  color: $white;
+}
+
 .btn-contact-grid-dash {
   font-weight: regular;
   width: 140px;
   margin: 5px 0;
+}
+
+
+.btn-map-close {
+  color: $white;
+  background-color: $kondocyan;
+  border: 1px solid $kondocyan;
+  padding: 10px 24px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+  width: 150px;
+  text-align: center;
+}
+
+.btn-map-close:hover {
+  opacity: 1;
+  color: $white;
 }

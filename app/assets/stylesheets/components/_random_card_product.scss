@@ -73,3 +73,12 @@
     margin-right: -10px;
     }
 }
+
+#maplink-target {
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+#maplink-target:hover {
+      text-decoration: underline;
+    }
