@@ -7,7 +7,7 @@ class FavoritesController < ApplicationController
     @favorite.user = current_user
     @favorite.kondo = @kondo
     @favorite.save
-    redirect_to kondos_path(:location => params[:location], :kondo_id => @kondo.id)
+    redirect_to kondos_path(:location => params[:location], :kondo_id => @kondo.id, :all => params[:all])
   end
 
   def destroy
@@ -21,8 +21,8 @@ class FavoritesController < ApplicationController
     if params[:redirect_to] == "dashboard"
       redirect_to dashboard_path
     end
-    if params[:location]
-      redirect_to kondos_path(:location => params[:location], :kondo_id => @kondo.id)
+    if params[:location] || params[:kondo_id]
+      redirect_to kondos_path(:location => params[:location], :kondo_id => @kondo.id, :all => params[:all])
     end
   end
 end
