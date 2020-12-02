@@ -13,32 +13,35 @@ class KondosController < ApplicationController
       @kondo = @kondos.sample
     end
 
-    @markers = [
-      {
-        lat: @kondo.latitude,
-        lng: @kondo.longitude,
-        infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
-      }
-    ]
-
+    if @kondo
+      @markers = [
+        {
+          lat: @kondo.latitude,
+          lng: @kondo.longitude,
+          infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
+        }
+      ]
+    end
   end
 
   def random
     if params[:location].present?
-      @kondos = policy_scope(Kondo).near(params[:location], 1, units: :km).order(created_at: :desc)
+      @kondos = policy_scope(Kondo).near(params[:location], 5, units: :km).order(created_at: :desc)
     else
       @kondos = policy_scope(Kondo).order(created_at: :desc)
     end
     @kondo = @kondos.sample
     render layout: false
 
-    @markers = [
-      {
-        lat: @kondo.latitude,
-        lng: @kondo.longitude,
-        infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
-      }
-    ]
+    if @kondo
+      @markers = [
+        {
+          lat: @kondo.latitude,
+          lng: @kondo.longitude,
+          infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
+        }
+      ]
+    end
     authorize @kondo
   end
 
