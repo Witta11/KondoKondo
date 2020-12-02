@@ -25,7 +25,7 @@ class KondosController < ApplicationController
 
   def random
     if params[:location].present?
-      @kondos = policy_scope(Kondo).near(params[:location], 5, units: :km).order(created_at: :desc)
+      @kondos = policy_scope(Kondo).near(params[:location], 200, units: :km).order(created_at: :desc)
     else
       @kondos = policy_scope(Kondo).order(created_at: :desc)
     end
