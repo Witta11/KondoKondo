@@ -57,12 +57,18 @@
 .footer-links {
   display: flex;
   margin-left: 2px;
+  justify-content: space-around;
+}
+
+.footer-words {
+  width: 100%;
 }
 
 .footer-copyright a {
   font-size: 14px;
   padding: 4px 0;
   margin-left: 30px;
+  display: inline-block;
 }
 
 /* When you mouse over the navigation links, change their color */
