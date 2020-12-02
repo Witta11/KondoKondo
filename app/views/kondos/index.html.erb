@@ -120,6 +120,15 @@
                   <p><i class="fas fa-map-marker-alt"></i>
                   <strong>Location:</strong> <%= kondo.location %></p>
                 </div>
+                <% if @kondo.reserved %>
+                    <%= link_to dashboard_kondo_reserve_path(:kondo_id => @kondo.id) do %>
+                    <i data-toggle="tooltip" data-placement="top" title="Reserved Kondo" class="fas fa-toggle-on"></i>
+                  <% end %>
+                  <% else %>
+                    <%= link_to dashboard_kondo_reserve_path(:kondo_id => @kondo.id) do %>
+                    <i data-toggle="tooltip" data-placement="top" title="Reserve Kondo" class="fas fa-toggle-off"></i>
+                    <% end %>
+                <% end %>
                 <%= form_tag chatrooms_path, method: :post do %>
                   <%= hidden_field_tag :kondo_id, kondo.id %>
                   <%= submit_tag "Contact Kondor", class: "btn btn-main-grid btn-contact-grid" %>

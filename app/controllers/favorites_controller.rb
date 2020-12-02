@@ -1,5 +1,4 @@
 class FavoritesController < ApplicationController
-
   def create
     @favorite = Favorite.new
     @kondo = Kondo.find(params[:kondo_id])
