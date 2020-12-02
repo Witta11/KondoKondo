@@ -13,35 +13,31 @@ class KondosController < ApplicationController
       @kondo = @kondos.sample
     end
 
-    if @kondo
-      @markers = [
-        {
-          lat: @kondo.latitude,
-          lng: @kondo.longitude,
-          infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
-        }
-      ]
-    end
+    @markers = [
+      {
+        lat: @kondo.latitude,
+        lng: @kondo.longitude,
+        infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
+      }
+    ]
   end
 
   def random
     if params[:location].present?
-      @kondos = policy_scope(Kondo).near(params[:location], 5, units: :km).order(created_at: :desc)
+      @kondos = policy_scope(Kondo).near(params[:location], 1, units: :km).order(created_at: :desc)
     else
       @kondos = policy_scope(Kondo).order(created_at: :desc)
     end
     @kondo = @kondos.sample
     render layout: false
 
-    if @kondo
-      @markers = [
-        {
-          lat: @kondo.latitude,
-          lng: @kondo.longitude,
-          infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
-        }
-      ]
-    end
+    @markers = [
+      {
+        lat: @kondo.latitude,
+        lng: @kondo.longitude,
+        infoWindow: render_to_string(partial: 'info_window', locals: { kondo: @kondo })
+      }
+    ]
     authorize @kondo
   end
 
@@ -86,11 +82,7 @@ class KondosController < ApplicationController
     authorize @kondo
     @kondo.reserved = !@kondo.reserved
     @kondo.save!
-    if params[:all => true]
-      redirect_to kondos_path(:location => params[:location], :kondo_id => @kondo.id, :all => params[:all])
-    else
     redirect_to dashboard_path
-    end
   end
 
   def active
