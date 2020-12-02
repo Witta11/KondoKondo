@@ -7,6 +7,12 @@ const fetchRandomKondo = () => {
     }).then(response => response.text())
         .then((html) => {
           document.querySelector('.card-wrapper').innerHTML = html;
+          const location_button = document.getElementById('maplink-target')
+          if (location_button) {
+            location_button.addEventListener('click',() => {
+              document.querySelector('.flip-card').classList.add('flip');
+            });
+          };
       });
     });
   };

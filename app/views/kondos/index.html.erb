@@ -1,6 +1,6 @@
 <div class="random-container">
   <div class="random-header">
-    <h5 style="font-weight: bold">Discover random Kondos nearby</h5>
+    <h5 style="font-weight: bold">Discover Kondos nearby</h5>
     <p style="font-size: 14px; color: white">Browse through the things other people in your neighborhood don't need anymore.</p>
   </div>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -18,7 +18,7 @@
           <div class="random-icons">
           </div>
           <div>
-            <i class="fas fa-redo-alt random-button"></i>
+            <i class="fas fa-random random-button"></i>
           </div>
         </div>
         <div class='flip-card'>
@@ -57,7 +57,7 @@
                   </div>
                 <div class="random-card-product-seller">
                   <div class="location">
-                    <p><i class="fas fa-map-marker-alt location-button"></i> <strong>See location</strong></p>
+                    <p id="maplink-target"><i class="fas fa-map-marker-alt location-button"></i>  See location</p>
                   </div>
                   <%= form_tag chatrooms_path, method: :post do %>
                     <%= hidden_field_tag :kondo_id, @kondo.id %>
@@ -69,6 +69,7 @@
 
           </div>
             <div class="flip-card-back">
+                <div class="map-close btn-map-close"><span>See Kondo</span></div>
               <div id="map"
                   style="width: 100%; height: 100%"
                   data-markers="<%= @markers.to_json %>"
