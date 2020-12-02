@@ -14,7 +14,7 @@ class KondoPolicy < ApplicationPolicy
   end
 
   def reserve?
-  record.user == user
+    record.user == user
   end
 
   def random?

@@ -1,10 +1,15 @@
 <div class="dash-container">
   <p class="dashboard-header">Dashboard</p>
+  <div class="headers-dash">
+    <h2 class="box-headers">My Favorites</h2>
+    <h2 class="box-headers">My Messages</h2>
+    <h2 class="box-headers">My Kondos</h2>
+  </div>
   <div class="boxes">
     <div class="dash-box">
-        <h2>My Favorites</h2>
+      <div class="box-content">
         <% @favorites.each do |fav| %>
-     <div class="card-product-two">
+          <div class="card-product-two">
             <% if fav.kondo.image.attached? %>
               <%= cl_image_tag fav.kondo.image.key, height: 180, width: 100, crop: :fill %>
             <% end %>
@@ -17,36 +22,46 @@
                 </div>
                 <p><%= fav.kondo.description %></p>
                 <div class="card-product-seller-dash">
-                  <p><strong>Pickup at:</strong> <%= fav.kondo.location %></p>
-                  <p><strong>Kondor:</strong> <%= fav.kondo.user.username %></p>
-                  <%#link_to 'Contact Kondor',  %>
+                  <p><strong>Pickup at:</strong>
+                    <br>
+                    <%= fav.kondo.location %></p>
+                  <%= form_tag chatrooms_path, method: :post do %>
+                    <%= hidden_field_tag :kondo_id, fav.kondo.id %>
+                    <%= submit_tag "Contact Kondor", class: "btn btn-main-grid btn-contact-grid-dash" %>
+                <% end %>
                 </div>
             </div>
           </div>
-      <% end %>
-        <%= link_to kondos_path do  %>
-        <div class="empty">
-          <i class="fas fa-plus"></i>
-        </div>
         <% end %>
-      </div>
-
-    <div class="dash-box">
-      <div class="box-content">
-        <h2>My Messages</h2>
-          <% current_user.chatrooms.each do |chatroom| %>
-            <p>
-              <%= link_to chatroom.kondo.title, chatroom_path(chatroom)%>
-            </p>
+          <%= link_to kondos_path do  %>
+          <div class="empty">
+            <i class="fas fa-plus"></i>
+          </div>
           <% end %>
-
       </div>
     </div>
 
+    <div class="dash-box">
+      <div class="box-content">
+        <% current_user.chatrooms.each do |chatroom| %>
+        <%= link_to chatroom_path(chatroom.id) do %>
+          <div class="chats">
+            <% if chatroom.kondo.image.attached? %>
+              <%= cl_image_tag chatroom.kondo.image.key, height: 180, width: 100, crop: :fill %>
+            <% end %>
+            <div>
+              <p class="chat-title"><%= chatroom.kondo.title %></p>
+              <p class="chat-content">Chat started: <%= chatroom.created_at.day %>.<%= chatroom.created_at.month %>.<%= chatroom.created_at.year %></p>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+
 
     <div class="dash-box">
       <div class="box-content">
-        <h2>My Kondos</h2>
         <% @kondos.each do |kondo|%>
         <div class="card-product-three">
             <% if kondo.image.attached? %>

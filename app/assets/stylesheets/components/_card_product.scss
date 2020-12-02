@@ -1,18 +1,18 @@
 .card-product {
     overflow: hidden;
     height: 200px;
-    width: 500px;
+    width: 540px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
     margin: 8px;
-
+    position: relative;
   }
 
   .card-product img {
     height: 100%;
-    width: 200px;
+    width: 280px;
     object-fit: cover;
   }
 
@@ -30,11 +30,26 @@
     margin-top: 8px;
   }
 
-  .card-product .card-product-infos-dash {
+.card-product-infos {
     height: max-content;
-    padding: 16px;
+    padding: 18px;
+    margin-bottom: 70px;
   }
 
-  .card-product-seller-dash {
-    margin-top: 20px
-  }
+
+  .card-product-seller {
+    margin-top: 20px;
+    position: absolute;
+    top: 36px;
+}
+
+.location-grid {
+  display: flex;
+  justify-content: space-between;
+  color: $grey;
+    p {
+      font-size: 10px;
+      // margin: 10px 0;
+
+    }
+}
