@@ -110,22 +110,17 @@
               </div>
               <p><%= kondo.description %></p>
             <div class="card-product-seller">
-              <!-- <p><strong>Kondor:</strong> <%= kondo.user.username %></p>
-              <p><strong>Pickup at:</strong>
-
-              <br>
-              <%= kondo.location %></p> -->
               <div class="card-product-seller">
                 <div class="location-grid">
                   <p><i class="fas fa-map-marker-alt"></i>
                   <strong>Location:</strong> <%= kondo.location %></p>
                 </div>
                 <% if @kondo.reserved %>
-                    <%= link_to dashboard_kondo_reserve_path(:kondo_id => @kondo.id) do %>
+                    <%= link_to dashboard_kondo_reserve_path(:kondo_id => @kondo.id, :all => true) do %>
                     <i data-toggle="tooltip" data-placement="top" title="Reserved Kondo" class="fas fa-toggle-on"></i>
                   <% end %>
                   <% else %>
-                    <%= link_to dashboard_kondo_reserve_path(:kondo_id => @kondo.id) do %>
+                    <%= link_to dashboard_kondo_reserve_path(:kondo_id => @kondo.id, :all => true) do %>
                     <i data-toggle="tooltip" data-placement="top" title="Reserve Kondo" class="fas fa-toggle-off"></i>
                     <% end %>
                 <% end %>

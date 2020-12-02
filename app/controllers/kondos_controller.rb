@@ -82,7 +82,11 @@ class KondosController < ApplicationController
     authorize @kondo
     @kondo.reserved = !@kondo.reserved
     @kondo.save!
+    if params[:all => true]
+      redirect_to kondos_path(:location => params[:location], :kondo_id => @kondo.id, :all => params[:all])
+    else
     redirect_to dashboard_path
+    end
   end
 
   def active
