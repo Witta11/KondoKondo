@@ -50,7 +50,7 @@ fritzi = User.create!(
 )
 
 herb = User.create!(
-    username: "herb",
+    username: "Herb",
     first_name: "Herbert",
     last_name: "Markuse",
     email: "herbert.markuse@gmail.com",
@@ -58,10 +58,18 @@ herb = User.create!(
 )
 
 horki = User.create!(
-    username: "horki",
+    username: "Horki",
     first_name: "Max",
     last_name: "Horkheimer",
     email: "max.horkheimer@gmail.com",
+    password: "123456"
+)
+
+marie = User.create!(
+    username: "Marie",
+    first_name: "Marie",
+    last_name: "Kondo",
+    email: "marie.kondo@gmail.com",
     password: "123456"
 )
 
@@ -90,10 +98,10 @@ sleep(5)
 puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
 
 
-file = URI.open("https://images.unsplash.com/photo-1518893883800-45cd0954574b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=674&q=80")
+file = URI.open("https://images.unsplash.com/photo-1573215193469-e0b7a554873a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
 kondo2 = Kondo.new(
-  title: "My Grandma's Grammophone",
-  description: "Although very good in shape, I am emotionally not capable of having it around me anymore, so please come by and fetch it ",
+  title: "x-box controller",
+  description: "We got new controllers, this one is still functional tho.",
   location: "Kreuzbergstraße 17a, 10965 Berlin",
   latitude: 52.4892546,
   longitude: 13.374921,
@@ -108,7 +116,7 @@ sleep(5)
 puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
 
 
-file = URI.open("https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTR8fHZpbnRhZ2V8ZW58MHx8MHw%3D&auto=format&fit=crop&w=600&q=60")
+file = URI.open("https://images.unsplash.com/photo-1431499012454-31a9601150c9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2850&q=80")
 kondo3 = Kondo.new(
   title: "Vintage Pocket Watch",
   description: "Just found this very old and sadly not functional watch when tidying my stuff during lock-down, for s.o. to repair maybe? ",
@@ -226,7 +234,7 @@ sleep(5)
 puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
 
 
-file = URI.open("https://images.unsplash.com/photo-1517408395525-fa05dd0bb2ef?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1052&q=80")
+file = URI.open("https://images.unsplash.com/photo-1593078166039-c9878df5c520?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
 kondo10 = Kondo.new(
   title: "Portable Radio from 1961",
   description: "This radio was purchased when the Berlin wall was errected to be able to listen to Westfunk.",
@@ -340,6 +348,71 @@ kondo16 = Kondo.new(
   )
 kondo16.image.attach(io: file, filename: 'stamps.png', content_type: 'image/png')
 kondo16.save
+sleep(5)
+puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
+
+
+file = URI.open("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+kondo17 = Kondo.new(
+  title: "Blue Velvet Sofa",
+  description: "Really fancy sofa in good shape, just the left back leg is a bit broken. Its a bit dusty too.",
+  location: "Gneisenaustraße 95, 10961 Berlin",
+  latitude: 52.49222024598585,
+  longitude: 13.393394971133988,
+  user: marie,
+  reserved: false,
+  active: true
+  )
+kondo17.image.attach(io: file, filename: 'PHOTONAME.png', content_type: 'image/png')
+kondo17.save
+sleep(5)
+puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
+
+file = URI.open("https://images.unsplash.com/photo-1521465192072-6926fef831fe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80")
+kondo18 = Kondo.new(
+  title: "Indoor Plant",
+  description: "I got it from my ex boyfriend and I am not really keen to have it anymore.",
+  location: "Gneisenaustraße 20, 10961 Berlin",
+  latitude: 52.49152804999066,
+  longitude: 13.393567572640661,
+  user: marie,
+  reserved: false,
+  active: true
+  )
+kondo18.image.attach(io: file, filename: 'PHOTONAME.png', content_type: 'image/png')
+kondo18.save
+sleep(5)
+puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
+
+file = URI.open("https://images.unsplash.com/photo-1583396216852-1e1d61137170?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+kondo19 = Kondo.new(
+  title: "Kombucha Scoby to give away",
+  description: "I regularly have scobies left to give away. My home brewn Kombucha is really good, so let me know if you need a recipe too!",
+  location: "Katzbachstraße, 10965 Berlin",
+  latitude: 52.48702581711476,
+  longitude: 13.378478689726913,
+  user: marie,
+  reserved: false,
+  active: true
+  )
+kondo19.image.attach(io: file, filename: 'PHOTONAME.png', content_type: 'image/png')
+kondo19.save
+sleep(5)
+puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
+
+file = URI.open("https://images.unsplash.com/photo-1462212210333-335063b676bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80")
+kondo20 = Kondo.new(
+  title: "Spare Sofa Chair",
+  description: "Its good quality but really old and just a little comfortable to sit in.",
+  location: "Obentrautstraße 19, 10963 Berlin",
+  latitude: 52.496059314621796,
+  longitude: 13.387847297971854,
+  user: kalle,
+  reserved: false,
+  active: true
+  )
+kondo20.image.attach(io: file, filename: 'PHOTONAME.png', content_type: 'image/png')
+kondo20.save
 sleep(5)
 puts "#{Kondo.count} #{Kondo.last.title} Kondo created..."
 
