@@ -22,7 +22,9 @@
                 </div>
                 <p><%= fav.kondo.description %></p>
                 <div class="card-product-seller-dash">
-                  <p><strong>Pickup at:</strong> <%= fav.kondo.location %></p>
+                  <p><strong>Pickup at:</strong>
+                    <br>
+                    <%= fav.kondo.location %></p>
                   <%= form_tag chatrooms_path, method: :post do %>
                     <%= hidden_field_tag :kondo_id, fav.kondo.id %>
                     <%= submit_tag "Contact Kondor", class: "btn btn-main-grid btn-contact-grid-dash" %>
