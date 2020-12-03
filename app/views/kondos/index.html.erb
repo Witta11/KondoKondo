@@ -73,7 +73,7 @@
                         <%= hidden_field_tag :kondo_id, @kondo.id %>
                         <%= submit_tag "Contact Kondor", class: 'btn btn-main btn-contact' %>
                          <% end %>
-                      <% else %>
+                    <% else %>
                       <%= form_tag chatrooms_path, method: :post do %>
                         <%= hidden_field_tag :kondo_id, @kondo.id %>
                         <%= submit_tag "This is your Kondo", class: 'btn btn-main btn-contact invisible', disabled: true %>
@@ -141,7 +141,7 @@
                     <%= hidden_field_tag :kondo_id, kondo.id %>
                     <%= submit_tag "Contact Kondor", class: "btn btn-main-grid btn-contact-grid" %>
                   <% end %>
-                  <% else %>
+                <% else %>
                   <%= form_tag chatrooms_path, method: :post do %>
                     <%= hidden_field_tag :kondo_id, @kondo.id %>
                     <%= submit_tag "This is your Kondo", class: 'btn btn-main btn-contact invisible', disabled: true %>
