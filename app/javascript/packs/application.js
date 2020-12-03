@@ -39,6 +39,7 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 import { fetchRandomKondo } from '../components/random_kondo';
 import { flipKondo, reFlipKondo } from '../components/flip_kondo';
 import { initMapbox } from '../plugins/init_mapbox';
+import { hideShuffle, showShuffle } from '../components/hide_shuffle';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 document.addEventListener('turbolinks:load', () => {
@@ -49,6 +50,8 @@ document.addEventListener('turbolinks:load', () => {
  flipKondo();
  reFlipKondo();
  initMapbox();
+ hideShuffle();
+ showShuffle();
 
  document.getElementById("open").addEventListener("click", openNav);
  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
