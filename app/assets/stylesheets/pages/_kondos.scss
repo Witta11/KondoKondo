@@ -40,7 +40,7 @@
 
 .nav  {
   margin-left: 110px;
-  margin-top: 30px;
+  margin-top: 2px;
 }
 
 .mb-3, .my-3 {
@@ -68,9 +68,17 @@
 }
 
 .random-button {
-  margin-right: 100px;
+  margin-right: 115px;
+  font-size: 1.3rem;
+  color: white;
+  background-color: $kondocyan;
+  padding: 10px 15px;
 }
 
+.random-button:hover {
+  opacity: 0.7;
+  color: $white;
+}
 
 // CARD FLIP
 
