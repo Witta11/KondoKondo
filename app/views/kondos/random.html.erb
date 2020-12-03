@@ -36,9 +36,15 @@
             <div class="location">
               <p id="maplink-target"><i class="fas fa-map-marker-alt location-button"></i>  See location</p>
             </div>
-            <%= form_tag chatrooms_path, method: :post do %>
-              <%= hidden_field_tag :kondo_id, @kondo.id %>
-              <%= submit_tag "Contact Kondor", class: 'btn btn-main btn-contact' %>
+            <% if current_user != @kondo.user %>
+              <%= form_tag chatrooms_path, method: :post do %>
+                <%= hidden_field_tag :kondo_id, @kondo.id %>
+                <%= submit_tag "Contact Kondor", class: 'btn btn-main btn-contact' %>
+              <% end %>
+            <% else %>
+            <div>
+              <p>This is your Kondo</p>
+            </div>
           <% end %>
           </div>
         </div>
