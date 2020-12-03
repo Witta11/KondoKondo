@@ -12,6 +12,7 @@ const showShuffle = () => {
   if (shuffle_tab) {
     shuffle_tab.addEventListener('click',() => {
       document.querySelector('.random-button').style.visibility="visible";
+      document.querySelector('.hide-shuffle').style.visibility="visible";
     });
   };
 }
