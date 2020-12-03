@@ -1,3 +1,5 @@
+import { initMapbox } from '../plugins/init_mapbox';
+
 const flipKondo = () => {
   const location_button = document.getElementById('maplink-target')
   if (location_button) {
