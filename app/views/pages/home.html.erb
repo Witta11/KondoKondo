@@ -18,7 +18,9 @@
   <% end %>
   </div>
 
+  <% if !params[:location].present? %>
   <i class="fas fa-angle-down homepage-arrow-down" id="homepage-arrow-selector"></i>
+  <% end %>
 
   <% if params[:location].present? %>
     <h5 style="font-weight: bold; text-align: center">What do you want to do?</h5>
