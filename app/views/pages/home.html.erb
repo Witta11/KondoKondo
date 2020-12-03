@@ -7,7 +7,7 @@
         <%= form_tag root_path, class: "search-container", method: :get do %>
            <%= text_field_tag :location,
                params[:location],
-               placeholder: "\xa0Search your hood...", class: "form-control search"
+               placeholder: "", class: "form-control search", autofocus: true
             %>
           <div class="input-group-append">
             <button class="button-search" type="submit"><i class="fas fa-search search"></i></button>
@@ -16,9 +16,12 @@
       </div>
     </div>
   <% end %>
+  </div>
+
+  <i class="fas fa-angle-down homepage-arrow-down" id="homepage-arrow-selector"></i>
+
   <% if params[:location].present? %>
     <h5 style="font-weight: bold; text-align: center">What do you want to do?</h5>
-  </div>
   <div class="split-container">
     <div class="option-container">
       <div>
@@ -55,3 +58,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.onscroll = function() {
+    if (window.scrollY >= '300') {
+        document.getElementById('homepage-arrow-selector').style.display='none';
+    } else if (window.scrollY <= '300') {
+      document.getElementById('homepage-arrow-selector').style.display='block';
+    }
+}
+</script>

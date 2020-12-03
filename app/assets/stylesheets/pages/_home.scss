@@ -26,6 +26,12 @@
   margin-top: 16px;
 }
 
+.algolia-places {
+  .search {
+    padding-left: 20px !important;
+  }
+}
+
 button {
   background-color: transparent;
 }
@@ -58,6 +64,18 @@ button:focus {
 .fa-search:before {
   color: white;
 }
+
+// arrow down homepage
+.homepage-arrow-down {
+  font-size: 40px;
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 350px;
+}
+
+
+
+
 
 .input-group-append {
   background-color: white;
