@@ -68,4 +68,12 @@ document.addEventListener('turbolinks:load', () => {
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
+
+  document.onscroll = function() {
+  if (window.scrollY >= '300') {
+      document.getElementById('homepage-arrow-selector').style.display='none';
+  } else if (window.scrollY <= '300') {
+    document.getElementById('homepage-arrow-selector').style.display='block';
+  }
+}
 });
