@@ -50,10 +50,7 @@
               <%= cl_image_tag chatroom.kondo.image.key, height: 180, width: 100, crop: :fill %>
             <% end %>
             <div>
-            <% if chatroom.kondo.user.id == current_user.id  %>
-              <p>
-                KonDoner
-              </p>
+            <% if chatroom.kondo.user.id == current_user.id %>
             <% end %>
               <p class="chat-buddy"><%= chatroom.kondo.user.username %> </p>
               <p class="chat-title"><%= chatroom.kondo.title %></p>
@@ -95,7 +92,7 @@
                 <% end %>
                 <% if kondo.active %>
                   <%= link_to dashboard_kondo_active_path(:kondo_id => kondo.id) do %>
-                  <i data-toggle="tooltip" data-placement="top" title="Dectivate Kondo" class="far fa-eye"></i>
+                  <i data-toggle="tooltip" data-placement="top" title="Deactivate Kondo" class="far fa-eye"></i>
                 <% end %>
                 <% else %>
                   <%= link_to dashboard_kondo_active_path(:kondo_id => kondo.id) do %>
