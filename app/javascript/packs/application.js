@@ -69,11 +69,14 @@ document.addEventListener('turbolinks:load', () => {
     $('[data-toggle="tooltip"]').tooltip()
   })
 
-  document.onscroll = function() {
-  if (window.scrollY >= '300') {
-      document.getElementById('homepage-arrow-selector').style.display='none';
-  } else if (window.scrollY <= '300') {
-    document.getElementById('homepage-arrow-selector').style.display='block';
+document.onscroll = function() {
+  const arrow = document.getElementById('homepage-arrow-selector')
+  if (arrow) {
+    if (window.scrollY >= '300') {
+      arrow.style.display='none';
+    } else if (window.scrollY <= '300') {
+      arrow.style.display='block';
+    }
   }
 }
 });
