@@ -21,11 +21,7 @@
   <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade <%= "show active" if !params[:all] %>" id="pills-shuffle" role="tabpanel" aria-labelledby="pills-shuffle-tab">
       <div class="kondos-container">
-        <div class="random-icons-wrapper">
-          <div class="random-icons">
-          </div>
 
-        </div>
         <% if !@kondo %>
           <h2 style="color: white">We are sorry! There are no Kondos in your area.</h2>
         <% end %>
