@@ -1,6 +1,6 @@
 <% content_for :meta_title, "#{@kondo.title} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @kondo.description %>
-<% content_for :meta_image, cl_image_path(@kondo.picture.path) %>
+<% content_for :meta_image, cl_image_path(@kondo.image.key) %>
 
 <div class="random-container">
   <div class="random-header">
