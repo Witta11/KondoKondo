@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@kondo.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @kondo.description %>
+<% content_for :meta_image, cl_image_path(@kondo.image.key) %>
+
 <div class="random-container">
   <div class="random-header">
     <h5 style="font-weight: bold">Discover Kondos nearby</h5>
@@ -74,7 +78,7 @@
                       <%= form_tag chatrooms_path, method: :post do %>
                         <%= hidden_field_tag :kondo_id, @kondo.id %>
                         <%= submit_tag "This is your Kondo", class: 'btn btn-main btn-contact invisible', disabled: true %>
-                       <% end %> 
+                       <% end %>
                     <% end %>
                   </div>
                 </div>
@@ -142,7 +146,7 @@
                   <%= form_tag chatrooms_path, method: :post do %>
                     <%= hidden_field_tag :kondo_id, @kondo.id %>
                     <%= submit_tag "This is your Kondo", class: 'btn btn-main btn-contact invisible', disabled: true %>
-                  <% end %> 
+                  <% end %>
                 <% end %>
               </div>
             </div>
