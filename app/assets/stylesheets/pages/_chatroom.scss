@@ -2,23 +2,27 @@
   padding: 0 250px;
 }
 
-.chat-container h1 {
+.chat-container h5 {
   color: white;
+  font-weight: bold;
   text-align: center;
 }
 
 .subheader-chat {
   color: white;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .message-box {
   display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 20px auto;
-  width: 50%;
+      align-items: center;
+      text-align: center;
+      margin: 1rem auto 2rem 12rem;
+      width: 50%;
+      bottom: 2rem;
 }
+
 
 .message-input {
   width: 500px;
@@ -55,6 +59,11 @@
   margin-bottom: 0;
 }
 
+#messages {
+  height: 56vh;
+  overflow-y: auto;
+}
+
 button {
   background-color: transparent;
 }
@@ -81,6 +90,12 @@ button {
 button:focus {
   box-shadow: none !important;
   outline: 0 !important;
+}
+
+.author {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }
 
 .date-author {
