@@ -5,9 +5,8 @@
     <% @chatroom.messages.each do |message| %>
       <div class="message-container <%= @chatroom.user.username == message.user.username ? 'interested' : 'kondor' %>" id="message-<%= message.id %>">
         <i class="author">
-          <span><%= message.user.username %></span>
-          <br>
-          <p class="date-author"><small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></p>
+          <span class="date-author"><small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></span>
+          <span class="date-author"><%= message.user.username %></span>
         </i>
         <p class="message-content"><%= message.content %></p>
       </div>
