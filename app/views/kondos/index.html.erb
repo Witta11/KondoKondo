@@ -107,7 +107,7 @@
             <%= cl_image_tag kondo.image.key, height: 400, width: 400, crop: :fill %>
           <% end %>
             <div class="card-product-infos">
-              <div class="d-flex">
+              <div id="fav-icon">
               <h2><%= kondo.title %></h2>
                 <% if current_user && !current_user.owner?(kondo) %>
                   <% if current_user.favorite?(kondo) %>
@@ -132,7 +132,7 @@
               <div class="card-product-seller">
                 <div class="location-grid">
                   <p><i class="fas fa-map-marker-alt"></i>
-                  <strong>Location:</strong> <%= kondo.location %></p>
+                  <%= kondo.location %></p>
                 </div>
               <% if kondo.reserved %>
                   <p>This Kondo is reserved already.</p>
