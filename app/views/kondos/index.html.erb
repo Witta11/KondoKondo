@@ -77,7 +77,7 @@
                     <% else %>
                       <%= form_tag chatrooms_path, method: :post do %>
                         <%= hidden_field_tag :kondo_id, @kondo.id %>
-                        <%= submit_tag "This is your Kondo", class: 'btn btn-main btn-contact invisible', disabled: true %>
+                        <%= submit_tag "This is your Kondo", class: 'btn btn-main btn-contact', disabled: true %>
                        <% end %>
                     <% end %>
                   </div>
@@ -145,7 +145,7 @@
                 <% else %>
                   <%= form_tag chatrooms_path, method: :post do %>
                     <%= hidden_field_tag :kondo_id, @kondo.id %>
-                    <%= submit_tag "This is your Kondo", class: 'btn btn-main btn-contact invisible', disabled: true %>
+                    <%= submit_tag "This is your Kondo", class: 'btn btn-main-grid btn-contact-grid', disabled: true %>
                   <% end %>
                 <% end %>
               </div>
