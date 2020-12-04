@@ -9,9 +9,9 @@
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
-    align-items: center;
     margin-bottom: 16px;
     border-radius: 4px;
+    position: relative;
   }
 
   .card-product-two img {
@@ -37,11 +37,15 @@
 
   .card-product-two .card-product-infos-dash {
     height: max-content;
-    padding: 16px;
+    padding: 18px;
+    margin-bottom: 70px;
+    overflow-wrap: anywhere;
   }
 
   .card-product-seller-dash {
-    margin-top: 20px
+    margin-top: 20px;
+    position: absolute;
+    top: 90px;
   }
 
 .fa-heart:before {
@@ -71,3 +75,14 @@
   transition: all .2s ease-in-out;
 }
 
+.location-grid-dash {
+  display: flex;
+  justify-content: space-between;
+  color: $grey;
+  margin-bottom: 10px;
+    p {
+      font-size: 10px;
+      // margin: 10px 0;
+
+    }
+}
