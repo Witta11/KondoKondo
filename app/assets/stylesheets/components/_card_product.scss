@@ -1,18 +1,17 @@
 .card-product {
     overflow: hidden;
     height: 200px;
-    width: 540px;
+    width: 520px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
-    align-items: center;
     margin: 8px;
     position: relative;
   }
 
   .card-product img {
     height: 100%;
-    width: 280px;
+    width: 265px;
     object-fit: cover;
   }
 
@@ -40,7 +39,7 @@
   .card-product-seller {
     margin-top: 20px;
     position: absolute;
-    top: 36px;
+    top: 43px;
 }
 
 .location-grid {
